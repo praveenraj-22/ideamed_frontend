@@ -1,0 +1,337 @@
+<div class="container">
+    <span style="color:red">{{exception.message}}</span>
+<div class="row">
+    <div class="col-xs-5 col-centered">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h1>
+                    <center>Registration</center>
+                </h1>
+            </div>
+            <form>
+               
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-mobile"></i></span>
+                            <input type="number" name="fmobile" ng-model="feedback.fmobile" placeholder="Mobile number" class="form-control">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-mobile"></i></span>
+                            <input type="text" name="fname" ng-model="feedback.fname" placeholder="name" class="form-control">
+
+                        </div>
+                    </div>
+
+
+                    
+                    <div class="form-group">
+                        <label class="control-label col-xs-3">recreg</label>
+                        <div class="col-xs-8">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label class="radio-inline">
+                                            <input type="radio" name="recreg" ng-model="feedback.recreg" value="1">Good
+                                        </label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="radio-inline">
+                                            <input type="radio" name="recreg" ng-model="feedback.recreg" value="2">Better
+                                        </label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="radio-inline">
+                                            <input type="radio" name="recreg" ng-model="feedback.recreg" value="3">Poor
+                                        </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-3">doccoord</label>
+                            <div class="col-xs-8">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <label class="radio-inline">
+                                                <input type="radio" name="doccoord" ng-model="feedback.doccoord" value="1">Good
+                                            </label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="radio-inline">
+                                                <input type="radio" name="doccoord" ng-model="feedback.doccoord" value="2">Better
+                                            </label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="radio-inline">
+                                                <input type="radio" name="doccoord" ng-model="feedback.doccoord" value="3">Poor
+                                            </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="control-label col-xs-3">docser</label>
+                                <div class="col-xs-8">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <label class="radio-inline">
+                                                    <input type="radio" name="docser" ng-model="feedback.docser" value="1">Good
+                                                </label>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label class="radio-inline">
+                                                    <input type="radio" name="docser" ng-model="feedback.docser" value="2">Better
+                                                </label>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label class="radio-inline">
+                                                    <input type="radio" name="docser" ng-model="feedback.docser" value="3">Poor
+                                                </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3">opto</label>
+                                    <div class="col-xs-8">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <label class="radio-inline">
+                                                        <input type="radio" name="opto" ng-model="feedback.opto" value="1">Good
+                                                    </label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="radio-inline">
+                                                        <input type="radio" name="opto" ng-model="feedback.opto" value="2">Better
+                                                    </label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="radio-inline">
+                                                        <input type="radio" name="opto" ng-model="feedback.opto" value="3">Poor
+                                                    </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">counseling</label>
+                                        <div class="col-xs-8">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <label class="radio-inline">
+                                                            <input type="radio" name="counseling" ng-model="feedback.counseling" value="1">Good
+                                                        </label>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="radio-inline">
+                                                            <input type="radio" name="counseling" ng-model="feedback.counseling" value="2">Better
+                                                        </label>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="radio-inline">
+                                                            <input type="radio" name="counseling" ng-model="feedback.counseling" value="3">Poor
+                                                        </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="control-label col-xs-3">lab</label>
+                                            <div class="col-xs-8">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label class="radio-inline">
+                                                                <input type="radio" name="lab" ng-model="feedback.lab" value="1">Good
+                                                            </label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label class="radio-inline">
+                                                                <input type="radio" name="lab" ng-model="feedback.lab" value="2">Better
+                                                            </label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label class="radio-inline">
+                                                                <input type="radio" name="lab" ng-model="feedback.lab" value="3">Poor
+                                                            </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                    
+                    
+                                            <div class="form-group">
+                                                <label class="control-label col-xs-3">optical</label>
+                                                <div class="col-xs-8">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            <label class="radio-inline">
+                                                                    <input type="radio" name="optical" ng-model="feedback.optical" value="1">Good
+                                                                </label>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <label class="radio-inline">
+                                                                    <input type="radio" name="optical" ng-model="feedback.optical" value="2">Better
+                                                                </label>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <label class="radio-inline">
+                                                                    <input type="radio" name="optical" ng-model="feedback.optical" value="3">Poor
+                                                                </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                    
+                    
+                                                <div class="form-group">
+                                                    <label class="control-label col-xs-3">pharmacy</label>
+                                                    <div class="col-xs-8">
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <label class="radio-inline">
+                                                                        <input type="radio" name="pharmacy" ng-model="feedback.pharmacy" value="1">Good
+                                                                    </label>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label class="radio-inline">
+                                                                        <input type="radio" name="pharmacy" ng-model="feedback.pharmacy" value="2">Better
+                                                                    </label>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label class="radio-inline">
+                                                                        <input type="radio" name="pharmacy" ng-model="feedback.pharmacy" value="3">Poor
+                                                                    </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                    
+                    
+                                                    <div class="form-group">
+                                                        <label class="control-label col-xs-3">ot</label>
+                                                        <div class="col-xs-8">
+                                                            <div class="row">
+                                                                <div class="col-sm-4">
+                                                                    <label class="radio-inline">
+                                                                            <input type="radio" name="ot" ng-model="feedback.ot" value="1">Good
+                                                                        </label>
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <label class="radio-inline">
+                                                                            <input type="radio" name="ot" ng-model="feedback.ot" value="2">Better
+                                                                        </label>
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <label class="radio-inline">
+                                                                            <input type="radio" name="ot" ng-model="feedback.ot" value="3">Poor
+                                                                        </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                    
+                    
+                                                        <div class="form-group">
+                                                            <label class="control-label col-xs-3">cleaning</label>
+                                                            <div class="col-xs-8">
+                                                                <div class="row">
+                                                                    <div class="col-sm-4">
+                                                                        <label class="radio-inline">
+                                                                                <input type="radio" name="cleaning" ng-model="feedback.cleaning" value="1">Good
+                                                                            </label>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
+                                                                        <label class="radio-inline">
+                                                                                <input type="radio" name="cleaning" ng-model="feedback.cleaning" value="2">Better
+                                                                            </label>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
+                                                                        <label class="radio-inline">
+                                                                                <input type="radio" name="cleaning" ng-model="feedback.cleaning" value="3">Poor
+                                                                            </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                    
+
+                    
+                                                            <div class="form-group">
+                                                                <label class="control-label col-xs-3">overall</label>
+                                                                <div class="col-xs-8">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <label class="radio-inline">
+                                                                                    <input type="radio" name="overall" ng-model="feedback.overall" value="1">Good
+                                                                                </label>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
+                                                                            <label class="radio-inline">
+                                                                                    <input type="radio" name="overall" ng-model="feedback.overall" value="2">Better
+                                                                                </label>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
+                                                                            <label class="radio-inline">
+                                                                                    <input type="radio" name="overall" ng-model="feedback.overall" value="3">Poor
+                                                                                </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                            
+                            
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-xs-3">recommend</label>
+                                                                    <div class="col-xs-8">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-4">
+                                                                                <label class="radio-inline">
+                                                                                        <input type="radio" name="recommend" ng-model="feedback.recommend" value="1">Yes
+                                                                                    </label>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <label class="radio-inline">
+                                                                                        <input type="radio" name="recommend" ng-model="feedback.recommend" value="2">No
+                                                                                    </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-addon">
+                                                                                <i class="fa fa-mobile"></i></span>
+                                                                            <input type="text" name="staffdiff" ng-model="feedback.staffdiff" placeholder="staffdiff" class="form-control">
+                                                
+                                                                        </div>
+                                                                    </div>
+                                                
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-addon">
+                                                                                <i class="fa fa-mobile"></i></span>
+                                                                            <input type="text" name="remark" ng-model="feedback.remark" placeholder="remark" class="form-control">
+                                                
+                                                                        </div>
+                                                                    </div>
+                                                
+
+
+<br>
+<br>
+                    <div>
+                        <input type="submit" ng-click="register()" value="Register" class="btn pull-right"> 
+                        
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</div>
