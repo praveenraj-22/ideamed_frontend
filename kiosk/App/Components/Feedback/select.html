@@ -779,7 +779,9 @@ function validateForm() {
             }
         })
         .on('success.form.bv', function(e) {
-            $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
+            $('#success_message').slideDown({ opacity: "show" }, "slow")
+             // Do something ...
+             $('#success_message').show("id");
                 $('#contact_form').data('bootstrapValidator').resetForm();
 
             // Prevent form submission

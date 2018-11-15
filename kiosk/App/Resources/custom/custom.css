@@ -544,6 +544,13 @@ input[type=number]::placeholder,input[type=text]::placeholder {
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
   animation-delay: 1s;
+ 
+}
+.fadeIn.fifth {
+  -webkit-animation-delay: 30s;
+  -moz-animation-delay: 30s;
+  animation-delay: 30s;
+  
 }
 
 /* Simple CSS3 Fade-in Animation */
