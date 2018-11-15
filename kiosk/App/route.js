@@ -58,8 +58,26 @@ app.config(function($routeProvider)
         controller: 'FeedbackController',
      
     })
+    .when('/select', {
+        templateUrl: 'App/Components/Feedback/select.html',
+   
+           controller: 'FeedbackController',
+        
+       })
 
 
+       .when('/submit', {
+        templateUrl: 'App/Components/Feedback/submit.html',
+   
+           controller: 'FeedbackController',
+        
+       })
+       .when('/thank', {
+        templateUrl: 'App/Components/Feedback/thank.html',
+   
+           controller: 'FeedbackController',
+        
+       })
 
     // .when('/Register', {
     //     templateUrl: 'App/components/register/Register.html',
