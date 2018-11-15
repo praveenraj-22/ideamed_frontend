@@ -16,7 +16,6 @@ app.controller('FeedbackController', ['FeedbackService', '$location', '$scope', 
         {
          console.log(response)
     
-          //  alert('Thank you for your Feedback');
             $location.path('/thank')
         },
             function (response)
