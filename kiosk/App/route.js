@@ -1,5 +1,5 @@
 
-app.constant('REST_URI','http://localhost:8080/ideamed');
+app.constant('REST_URI','http://13.250.30.209:8080/ideamed/');
 
 app.config(function($routeProvider)
 {
