@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input name="fname" placeholder="Patient Name"  required="required"  ng-model="feedback.fname"  class="form-control" required="required"  type="text">
+                        <input name="fname" pattern="^([- \w\d\u00c0-\u024f]+)$" placeholder="Patient Name"  required  ng-model="feedback.fname"  class="form-control" required="required"  type="text">
 
                     </div>
 
@@ -33,14 +33,22 @@
                     </div>
 
                     <div class="form-group">
-                        <input name="fmobile" placeholder="xxxxx xxxxx" ng-model="feedback.fmobile" type="number" required="required" id="mobile" required="required"
+                        <input name="fmobile"
+                         placeholder="xxxxx xxxxx"
+                         ng-model="feedback.fmobile"
+                          pattern="^[789]\d{9}$" 
+                          maxlength="10"
+                           placeholder="XXX" required
+                           type="tel"
+                           id="mobile"
                             class="fadeIn second">
-                    </div>
+                           </div>
   
+                           
                 </form>
                 <center>
 
-                    <input type="button" id="id"  class="fadeIn fourth"   value="Next" >
+                    <input type="button" id="id" ng-disabled class="fadeIn fourth"   value="Next" >
                     
                 </center>
                    
@@ -87,59 +95,56 @@ $(document).ready(function() {
 });
 
 </script>
-<form class="well form-horizontal" name="form" action=""  method="post" id="contact_form1">
-    <fieldset>
-        <div class="well well-sm text-center">
+<form id="contact_form1">
+   
+        <div class="well well-md text-center">
 
             <div class="row">
 
-                <div class="col-lg-5 ">
+                    <div class="col-lg-5 ">
                     <h2 style="text-align: left;color: blue">
                         Reception &amp; Registration
                     </h2>
-                </div>
-                <div class="form-group">
-                       
-                                <label class="btn btn-lg btn-success">
-                                    <input type="radio" name="recreg" ng-model="feedback.recreg" value="1">
-                                    Excellent
-                                </label>
-                                <label class="btn btn-lg btn-warning">
-                                    <input type="radio" name="recreg" ng-model="feedback.recreg" value="2">
-                                    Good
-                                </label>
-                                <label class="btn btn-lg btn-danger">
-                                    <input type="radio" name="recreg" ng-model="feedback.recreg" value="3">
-                                    Poor
-                                </label>
-
-
-                           
-
-                </div>
+                   </div>
+                 <div class="dlk-radio btn-group">
+                
+            <label class="btn btn-lg btn-success">
+                <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio" value="1">
+                <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
+           </label>
+           <label class="btn btn-lg btn-warning">
+               <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio" value="2" defaultchecked="checked">
+               <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
+           </label>
+           <label class="btn btn-lg btn-danger">
+               <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio" value="3" defaultchecked="checked">
+               <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
+           </label>
+           
+        </div>
                 
             </div>
 
             <div class="row">
 
-                <div class="col-lg-5 ">
+                    <div class="col-lg-5 ">
                     <h2 style="text-align: initial;color: blue">
                         Doctor's Co-Ordinator
                     </h2>
-                </div>
+             </div>
 
-                <div class="form-group">
+                <div class="dlk-radio btn-group">
                         <label class="btn btn-lg btn-success">
                                 <input type="radio" name="doccoord" ng-model="feedback.doccoord" value="1">
-                                Excellent
+                                <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
                             </label>
                             <label class="btn btn-lg btn-warning">
                                 <input type="radio" name="doccoord" ng-model="feedback.doccoord" value="2">
-                                Good
+                                <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
                             </label>
                             <label class="btn btn-lg btn-danger">
                                 <input type="radio" name="doccoord" ng-model="feedback.doccoord" value="3">
-                                Poor
+                                <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
                             </label>
                             
                 </div>
@@ -155,18 +160,18 @@ $(document).ready(function() {
                     </h2>
                 </div>
 
-                <div class="form-group">
+                <div class="dlk-radio btn-group">
                         <label class="btn btn-lg btn-success">
                                 <input type="radio" name="docser" ng-model="feedback.docser" value="1">
-                                Excellent
+                                <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
                             </label>
                             <label class="btn btn-lg btn-warning">
                                 <input type="radio" name="docser" ng-model="feedback.docser" value="2">
-                                Good
+                                <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
                             </label>
                             <label class="btn btn-lg btn-danger">
                                 <input type="radio" name="docser" ng-model="feedback.docser" value="3">
-                                Poor
+                                <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
                             </label>
                 </div>
                
@@ -179,19 +184,20 @@ $(document).ready(function() {
                     <h2 style="text-align:center;color: blue">
                         Optometrist
                     </h2>
-                </div>
-                  <div class="form-group">
+                    </div>
+               
+                  <div class="dlk-radio btn-group">
                         <label class="btn btn-lg btn-success">
                                 <input type="radio" name="opto" ng-model="feedback.opto" value="1">
-                                Excellent
+                                <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
                             </label>
                             <label class="btn btn-lg btn-warning">
                                 <input type="radio" name="opto" ng-model="feedback.opto" value="2">
-                                Good
+                                <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
                             </label>
                             <label class="btn btn-lg btn-danger">
                                 <input type="radio" name="opto" ng-model="feedback.opto" value="3">
-                                Poor
+                                <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
                             </label>
 
                   </div>
@@ -205,19 +211,21 @@ $(document).ready(function() {
                             <h2 style="text-align: left;color: blue">
                         Counseling
                     </h2>
-                </div>
-                  <div class="form-group">
+                    </div>
+
+               
+                  <div class="dlk-radio btn-group">
                     <label class="btn btn-lg btn-success">
                         <input type="radio" name="counseling" ng-model="feedback.counseling" value="1">
-                        Excellent
+                        <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
                     </label>
                     <label class="btn btn-lg btn-warning">
                         <input type="radio" name="counseling" ng-model="feedback.counseling" value="2">
-                        Good
+                        <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
                     </label>
                     <label class="btn btn-lg btn-danger">
                         <input type="radio" name="counseling" ng-model="feedback.counseling" value="3">
-                        Poor
+                        <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
                     </label>
                 </div>
             </div>
@@ -230,18 +238,18 @@ $(document).ready(function() {
                         Laboratory
                     </h2>
                 </div>
-                  <div class="form-group">
+                  <div class="dlk-radio btn-group">
                     <label class="btn btn-lg btn-success">
                         <input type="radio" name="lab" ng-model="feedback.lab" value="1">
-                        Excellent
+                        <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
                     </label>
                     <label class="btn btn-lg btn-warning">
                         <input type="radio" name="lab" ng-model="feedback.lab" value="2">
-                        Good
+                        <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
                     </label>
                     <label class="btn btn-lg btn-danger">
                         <input type="radio" name="lab" ng-model="feedback.lab" value="3">
-                        Poor
+                        <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
                     </label>
                 </div>
             </div>
@@ -254,18 +262,18 @@ $(document).ready(function() {
                         Optical
                     </h2>
                 </div>
-                <div class="form-group">
+                <div class="dlk-radio btn-group">
                     <label class="btn btn-lg btn-success">
                         <input type="radio" name="optical" ng-model="feedback.optical" value="1">
-                        Excellent
+                        <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
                     </label>
                     <label class="btn btn-lg btn-warning">
                         <input type="radio" name="optical" ng-model="feedback.optical" value="2">
-                        Good
+                        <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
                     </label>
                     <label class="btn btn-lg btn-danger">
                         <input type="radio" name="optical" ng-model="feedback.optical" value="3">
-                        Poor
+                        <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
                     </label>
                 </div>
             </div>
@@ -277,18 +285,18 @@ $(document).ready(function() {
                         Pharmacy
                     </h2>
                 </div>
-                  <div class="form-group">
+                  <div class="dlk-radio btn-group">
                     <label class="btn btn-lg btn-success">
                         <input type="radio" name="pharmacy" ng-model="feedback.pharmacy" value="1">
-                        Excellent
+                        <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
                     </label>
                     <label class="btn btn-lg btn-warning">
                         <input type="radio" name="pharmacy" ng-model="feedback.pharmacy" value="2">
-                        Good
+                        <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
                     </label>
                     <label class="btn btn-lg btn-danger">
                         <input type="radio" name="pharmacy" ng-model="feedback.pharmacy" value="3">
-                        Poor
+                        <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
                     </label>
                 </div>
             </div>
@@ -301,18 +309,18 @@ $(document).ready(function() {
                         Operation Theatre
                     </h2>
                 </div>
-                  <div class="form-group">
+                  <div class="dlk-radio btn-group">
                     <label class="btn btn-lg btn-success">
                         <input type="radio" name="ot" ng-model="feedback.ot" value="1">
-                        Excellent
+                        <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
                     </label>
                     <label class="btn btn-lg btn-warning">
                         <input type="radio" name="ot" ng-model="feedback.ot" value="2">
-                        Good
+                        <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
                     </label>
                     <label class="btn btn-lg btn-danger">
                         <input type="radio" name="ot" ng-model="feedback.ot" value="3">
-                        Poor
+                        <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
                     </label>
                 </div>
             </div>
@@ -325,18 +333,18 @@ $(document).ready(function() {
                         Cleaning & Hygiene
                     </h2>
                 </div>
-                  <div class="form-group">
+                <div class="dlk-radio btn-group">
                     <label class="btn btn-lg btn-success">
                         <input type="radio" name="cleaning" ng-model="feedback.cleaning" value="1">
-                        Excellent
+                        <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
                     </label>
                     <label class="btn btn-lg btn-warning">
                         <input type="radio" name="cleaning" ng-model="feedback.cleaning" value="2">
-                        Good
+                        <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
                     </label>
                     <label class="btn btn-lg btn-danger">
                         <input type="radio" name="cleaning" ng-model="feedback.cleaning" value="3">
-                        Poor
+                        <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
                     </label>
                 </div>
             </div>
@@ -350,18 +358,18 @@ $(document).ready(function() {
                         Overall Feedback
                     </h2>
                 </div>
-                  <div class="form-group" >
+                <div class="dlk-radio btn-group">
                     <label class="btn btn-lg btn-success">
                         <input type="radio" name="overall" ng-model="feedback.overall" value="1">
-                        Excellent
+                        <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
                     </label>
                     <label class="btn btn-lg btn-warning">
                         <input type="radio" name="overall" ng-model="feedback.overall" value="2">
-                        Good
+                        <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
                     </label>
                     <label class="btn btn-lg btn-danger">
                         <input type="radio" name="overall" ng-model="feedback.overall" value="3">
-                        Poor
+                        <i class="fa fa-times glyphicon glyphicon-remove">Poor</i> 
                     </label>
                    <script>
                    
@@ -377,9 +385,76 @@ $('#id').show();
         </div>
         </div>
 
-      
-    </fieldset>
-</form>
+      </form>
+      <style>
+      .dlk-radio input[type="radio"],
+.dlk-radio input[type="checkbox"] 
+{
+	margin-left:-99999px;
+	display:none;
+}
+.dlk-radio input[type="radio"] + .fa ,
+.dlk-radio input[type="checkbox"] + .fa {
+     opacity:0.15
+}
+.dlk-radio input[type="radio"]:checked + .fa,
+.dlk-radio input[type="checkbox"]:checked + .fa{
+    opacity:1
+}
+
+
+      </style>
+  
+    
+	<!-- <div class="well well-lg text-center"> -->
+            <!-- <h3>Radio:</h3> -->
+<!-- <div class="col-lg-4">
+<label for="">Reception	&amp; Registration</label>
+</div>
+            <div class="dlk-radio btn-group">
+                
+            <label class="btn btn-lg btn-success">
+                <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio" value="1">
+                <i class="fa fa-check glyphicon glyphicon-ok"></i>Excellent
+           </label>
+           <label class="btn btn-lg btn-warning">
+               <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio" value="2" defaultchecked="checked">
+               <i class="fa fa-warning glyphicon glyphicon-warning-sign"></i>Good
+           </label>
+           <label class="btn btn-lg btn-danger">
+               <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio" value="3" defaultchecked="checked">
+               <i class="fa fa-times glyphicon glyphicon-remove"></i>Poor
+           </label>
+           
+        </div>
+        </div>
+</form> -->
+<!-- <style>
+.dlk-radio input[type="radio"],
+.dlk-radio input[type="checkbox"] 
+{
+	margin-left:-99999px;
+	display:none;
+}
+.dlk-radio input[type="radio"] + .fa ,
+.dlk-radio input[type="checkbox"] + .fa {
+     opacity:0.15
+}
+.dlk-radio input[type="radio"]:checked + .fa,
+.dlk-radio input[type="checkbox"]:checked + .fa{
+    opacity:1
+}
+
+@media (min-width: 375px)
+{
+    .btn-group-lg>.btn, .btn-lg {
+        padding: 10px 16px;
+    font-size: 10px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    }
+}
+</style> -->
 <center>
 
     <input type="button" id="id1"  class="fadeIn fifth"  ng-disabled="form.$invalid" value="Next" disabled='disabled'>
@@ -463,14 +538,14 @@ $("#id").click(function () {
                             </h2>
                         </div>
 
-                        <div class="form-group" >
+                        <div class="dlk-radio btn-group">
                             <label class="btn btn-lg btn-success">
                                 <input type="radio" name="recommend" ng-model="feedback.recommend" value="1">
-                                Yes
+                                <i class="fa fa-check glyphicon glyphicon-ok">Yes</i>
                             </label>
                             <label class="btn btn-lg btn-warning">
                                 <input type="radio" name="recommend" ng-model="feedback.recommend" value="2">
-                                No
+                                <i class="fa fa-times glyphicon glyphicon-remove">No</i> 
                             </label>
 
 
@@ -488,7 +563,7 @@ $("#id").click(function () {
 
                                 <div class="col-md-9">
                                         <div class="form-group">
-                                                <input  name="staffdiff" ng-model="feedback.staffdiff" placeholder="staffdiff" class="form-control"  type="text">
+                                                <input  name="staffdiff" ng-model="feedback.staffdiff" placeholder="Staff Name" class="form-control"  type="text">
                         
                                             </div>
                                 </div>
@@ -507,7 +582,7 @@ $("#id").click(function () {
 
                         <div class="col-md-9">
                                 <div class="form-group">
-                                        <textarea name="remark" rows="6" placeholder="remark" ng-model="feedback.remark" class="form-control" type="text"></textarea>
+                                        <textarea name="remark" rows="6" placeholder="" ng-model="feedback.remark" class="form-control" type="text"></textarea>
                 
                                     </div>
                         </div>

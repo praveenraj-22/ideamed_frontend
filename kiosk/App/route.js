@@ -11,46 +11,7 @@ app.config(function($routeProvider)
      
     })
 
-    // .when('/Register', {
-    //     templateUrl: 'App/components/register/Register.html',
-    //     controller: 'RegisterController',
-    // })
-    
-
-    // .when('/login',{
-    //     templateUrl: '/components/login/login.html',
-    //     controller: 'LoginController'
-    // })
-    // .when('/editprofile',{
-    //     templateUrl: '/components/register/editprofile.html',
-    //     controller:'registercontroller1',
-    // })
-
    
-    // .when("/appointment", {
-    //     templateUrl: 'App/Components/appointment/appointment.html'
-     
-    // })
-
-    // .when("/registration", {
-    //     templateUrl: 'App/Components/Registration/registration.html'
-     
-    // })
-
-    // .when("/booked", {
-    //     templateUrl: 'App/Components/Registration/booked.html'
-     
-    // })
-
-
-    
-    // .when("/appbooking", {
-    //     templateUrl: 'App/Components/appointment/appbooking.html'
-     
-    // })
-    
-
-
 
     .when('/feedback', {
      templateUrl: 'App/Components/Feedback/feedback.html',
@@ -79,57 +40,7 @@ app.config(function($routeProvider)
         
        })
 
-    // .when('/Register', {
-    //     templateUrl: 'App/components/register/Register.html',
-    //     controller: 'RegisterController',
-    // })
     
-
-    // .when('/login',{
-    //     templateUrl: '/components/login/login.html',
-    //     controller: 'LoginController'
-    // })
-    // .when('/editprofile',{
-    //     templateUrl: '/components/register/editprofile.html',
-    //     controller:'registercontroller1',
-    // })
-
-    
-
-
-   
-    // .when("/emp", {
-    //     templateUrl: 'App/Components/bookonline/emp.html'
-     
-    // })
- 
-    
-    // .when("/prp", {
-    //     templateUrl: 'App/Components/bookonline/prp.html'
-     
-    // })
-    
-    // .when("/img", {
-    //     templateUrl: 'App/Components/bookonline/img.html'
-     
-    // })
-    
-    // .when("/fml", {
-    //     templateUrl: 'App/Components/bookonline/fml.html'
-     
-    // })
-    
-    // .when("/cony", {
-    //     templateUrl: 'App/Components/bookonline/cony.html'
-     
-    // })
-    
-    // .when("/cri", {
-    //     templateUrl: 'App/Components/bookonline/cri.html'
-     
-    // })
-
-
 
 
     .otherwise({
