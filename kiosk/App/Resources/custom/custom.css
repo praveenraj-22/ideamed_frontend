@@ -430,7 +430,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active ,
 input[type=number],input[type=text] {
   background-color: rgb(40, 77, 241);
   border: none;
-  color: #0d0d0d;
+  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -452,7 +452,7 @@ input[type=number],input[type=text] {
 input[type=tel] {
   background-color: rgb(40, 77, 241);
   border: none;
-  color: #0d0d0d;
+  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -566,9 +566,9 @@ input[type=number]::placeholder,input[type=text]::placeholder {
 }
 
 .fadeIn.fourth {
-  -webkit-animation-delay: 5s;
-  -moz-animation-delay: 5s;
-  animation-delay: 5s;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
  
 }
 .fadeIn.fifth {

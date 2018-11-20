@@ -36,12 +36,13 @@
                         <input name="fmobile"
                          placeholder="xxxxx xxxxx"
                          ng-model="feedback.fmobile"
-                          pattern="^[789]\d{9}$" 
+                          pattern="^[6789]\d{9}$" 
                           maxlength="10"
                            placeholder="XXX" required
                            type="tel"
                            id="mobile"
-                            class="fadeIn second">
+                            class="fadeIn second"
+                            >
                            </div>
   
                            
@@ -395,11 +396,11 @@ $('#id').show();
 }
 .dlk-radio input[type="radio"] + .fa ,
 .dlk-radio input[type="checkbox"] + .fa {
-     opacity:0.15
+     opacity:1
 }
 .dlk-radio input[type="radio"]:checked + .fa,
 .dlk-radio input[type="checkbox"]:checked + .fa{
-    opacity:1
+    opacity:0.15
 }
 
 
@@ -532,7 +533,7 @@ $("#id").click(function () {
 
                     <div class="row">
 
-                        <div class="col-md-3 ">
+                        <div class="col-md-4 ">
                             <h2 style="text-align: left;color: blue">
                             Will you Recommend our hospital
                             </h2>
@@ -554,14 +555,14 @@ $("#id").click(function () {
 
                     <div class="row">
 
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                     <h2 style="text-align: left;color: blue">
                                     Staff who made difference
                                     </h2>
 
                                 </div>
 
-                                <div class="col-md-9">
+                                <div class="col-md-8">
                                         <div class="form-group">
                                                 <input  name="staffdiff" ng-model="feedback.staffdiff" placeholder="Staff Name" class="form-control"  type="text">
                         
@@ -573,14 +574,14 @@ $("#id").click(function () {
                     <div class="row">
 
 
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                             <h2 style="text-align: left;color: blue">
                            Remark
                             </h2>
 
                         </div>
 
-                        <div class="col-md-9">
+                        <div class="col-md-8">
                                 <div class="form-group">
                                         <textarea name="remark" rows="6" placeholder="" ng-model="feedback.remark" class="form-control" type="text"></textarea>
                 
