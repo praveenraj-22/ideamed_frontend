@@ -320,7 +320,7 @@ h2 {
   text-align: center;
   font-size: 16px;
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: capitalize;
   display:inline-block;
   margin: 40px 8px 10px 8px; 
   color: #cccccc;
@@ -393,7 +393,7 @@ h2.active {
 
 /* FORM TYPOGRAPHY*/
 
-input[type=button], input[type=submit], input[type=reset] ,input[type=text] {
+input[type=button], input[type=submit], input[type=reset] ,input[type=text],input[type=number],input[type=tel] {
   background-color: #56baed;
   border: none;
   color: white;
@@ -401,7 +401,7 @@ input[type=button], input[type=submit], input[type=reset] ,input[type=text] {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 13px;
   -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
   box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
@@ -415,11 +415,11 @@ input[type=button], input[type=submit], input[type=reset] ,input[type=text] {
   transition: all 0.3s ease-in-out;
 }
 
-input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover ,input[type=text]:hover {
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover ,input[type=text]:hover,input[type=number]:hover,input[type=tel]:hover {
   background-color: #39ace7;
 }
 
-input[type=button]:active, input[type=submit]:active, input[type=reset]:active ,input[type=text]:active {
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active ,input[type=text]:active,input[type=number]:active,input[type=tel]:active {
   -moz-transform: scale(0.95);
   -webkit-transform: scale(0.95);
   -o-transform: scale(0.95);
@@ -427,7 +427,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active ,
   transform: scale(0.95);
 }
 
-input[type=number],input[type=text] {
+input[type=number],input[type=text],input[type=tel] {
   background-color: rgb(40, 77, 241);
   border: none;
   color: white;
@@ -446,7 +446,7 @@ input[type=number],input[type=text] {
   transition: all 0.5s ease-in-out;
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
-
+height: 60px;
 }
 
 input[type=tel] {

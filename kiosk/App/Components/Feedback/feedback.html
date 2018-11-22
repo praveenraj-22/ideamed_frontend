@@ -1,5 +1,5 @@
-<div class="container">
-
+<!-- <div class="container"> -->
+<!-- 
     <div class="container">
         <center>
             <ol class="breadcrumb">
@@ -9,54 +9,67 @@
       </center>
 
 
-    </div>
+    </div> -->
 
-    <div class="container">
-        <div class="wrapper fadeInDown">
-            <div id="formContent">
-                <div class="fadeIn first">
-                    <h1>Feedback</h1>
-                </div>
-            <form class="well form-horizontal" name="form"  method="post"   id="contact_form">
- 
-                    <div class="fadeIn first">
-                        <h3>Enter Patient Name</h3>
-                    </div>
-
-                    <div class="form-group">
-                        <input name="fname" pattern="^([- \w\d\u00c0-\u024f]+)$" placeholder="Patient Name"  required  ng-model="feedback.fname"  class="form-control" required="required"  type="text">
-
-                    </div>
-
-                    <div class="fadeIn first">
-                        <h3>Enter Mobile Number</h3>
-                    </div>
-
-                    <div class="form-group">
-                        <input name="fmobile"
-                         placeholder="xxxxx xxxxx"
-                         ng-model="feedback.fmobile"
-                          pattern="^[6789]\d{9}$" 
-                          maxlength="10"
-                           placeholder="XXX" required
-                           type="tel"
-                           id="mobile"
-                            class="fadeIn second"
-                            >
-                           </div>
-  
-                           
-                </form>
-                <center>
-
-                    <input type="button" id="id" ng-disabled class="fadeIn fourth"   value="Next" >
-                    
-                </center>
-                   
+<div class="container">
+    <div class="wrapper fadeInDown">
+        <br><br><br><br><br>
         
-               
-               
-            
+        <div id="formContent">
+            <!-- <div class="fadeIn first">
+                    <h1>Feedback</h1>
+                </div> -->
+            <form class="well form-horizontal"  name="form" method="post" id="contact_form">
+
+                <div class="fadeIn first">
+                    <h3>Enter Patient Name</h3>
+                </div>
+
+                <div class="form-group">
+                    <input name="fname"  placeholder="    " required ng-model="feedback.fname"
+                        class="form-control" type="text">
+
+                </div>
+
+                <div class="fadeIn first">
+                    <h3>Enter Mobile Number</h3>
+                </div>
+
+                <div class="form-group">
+                    <input name="fmobile" placeholder="" id="phnm" ng-model="feedback.fmobile" pattern="^[6789]\d{9}$"
+                        maxlength="10"  required type="tel" id="mobile"  class="fadeIn second">
+                </div>
+
+
+            </form>
+            <center>
+
+                <input type="button" id="id" disabled class="fadeIn fourth" style="font-size: 22px;" value="Next">
+
+            </center>
+
+
+<script>
+// function phn(){
+//     if(document.getElementById("phn") > 0) { 
+//             document.getElementById('id').disabled = false; 
+//         } else { 
+//             document.getElementById('id').disabled = true;
+//         }
+// //}
+// $("#id").hide()
+// if(document.getElementById("phnm").val>0)
+// {
+//     $("#id").show();
+
+// }
+// else
+// {
+//     document.getElementById('id').disabled = true; 
+// }
+</script>
+
+
             <style>
                 .btn.active {
                     display: none;
@@ -79,316 +92,348 @@
                 }
             </style>
 
-<script>
-$(document).ready(function() {
-    $('input[type="button"]').attr('disabled', true);
-    
-    $('input[type="text"],textarea').on('keyup',function() {
-        var textarea_value = $("#texta").val();
-        var text_value = $('input[name="text"]').val();
-        
-        if(textarea_value != '' && text_value != '') {
-            $('input[type="button"]').attr('disabled', false);
-        } else {
-            $('input[type="button"]').attr('disabled', true);
-        }
-    });
-});
+            <script>
+                $(document).ready(function () {
+                    $('input[type="button"]').attr('disabled', true);
 
-</script>
-<form id="contact_form1">
-   
-        <div class="well well-md text-center">
+                    $('input[type="text"],textarea').on('keyup', function () {
+                        var textarea_value = $("#texta").val();
+                        var text_value = $('input[name="text"]').val();
 
-            <div class="row">
+                        if (textarea_value != '' && text_value != '') {
+                            $('input[type="button"]').attr('disabled', false);
+                        } else {
+                            $('input[type="button"]').attr('disabled', true);
+                        }
+                    });
+                });
 
-                    <div class="col-lg-5 ">
-                    <h2 style="text-align: left;color: blue">
-                        Reception &amp; Registration
-                    </h2>
-                   </div>
-                 <div class="dlk-radio btn-group">
-                
-            <label class="btn btn-lg btn-success">
-                <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio" value="1">
-                <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
-           </label>
-           <label class="btn btn-lg btn-warning">
-               <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio" value="2" defaultchecked="checked">
-               <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
-           </label>
-           <label class="btn btn-lg btn-danger">
-               <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio" value="3" defaultchecked="checked">
-               <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
-           </label>
-           
-        </div>
-                
-            </div>
+            </script>
+            <form id="contact_form1">
 
-            <div class="row">
+                <div class="well well-md text-center">
 
-                    <div class="col-lg-5 ">
-                    <h2 style="text-align: initial;color: blue">
-                        Doctor's Co-Ordinator
-                    </h2>
-             </div>
-
-                <div class="dlk-radio btn-group">
-                        <label class="btn btn-lg btn-success">
-                                <input type="radio" name="doccoord" ng-model="feedback.doccoord" value="1">
-                                <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
-                            </label>
-                            <label class="btn btn-lg btn-warning">
-                                <input type="radio" name="doccoord" ng-model="feedback.doccoord" value="2">
-                                <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
-                            </label>
-                            <label class="btn btn-lg btn-danger">
-                                <input type="radio" name="doccoord" ng-model="feedback.doccoord" value="3">
-                                <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
-                            </label>
-                            
-                </div>
-                
-            </div>
+                    <!-- <div class="well well-md text-left"> -->
+                    <div class="row">
 
 
-            <div class="row">
+                        <div class="dlk-radio btn-group text-center">
+                            <div class="container">
+                                <h2 style="color: blue;font-size: 26px;">
+                                    Reception &amp; Registration
+                                </h2>
 
-                    <div class="col-lg-5 ">
-                    <h2 style="text-align: left;color: blue">
-                        Doctor's Service
-                    </h2>
-                </div>
+                            </div>
+                            <div class="container">
+                                <label class="btn btn-lg btn-success">
+                                    <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio"
+                                        value="1">
+                                    <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
+                                </label>
+                                <label class="btn btn-lg btn-warning">
+                                    <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio"
+                                        value="2" defaultchecked="checked">
+                                 <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
+                                </label>
+                                <label class="btn btn-lg btn-danger">
+                                    <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio"
+                                        value="3" defaultchecked="checked">
+                         <i class="fa fa-times glyphicon glyphicon-remove">Poor</i> 
+                                </label>
 
-                <div class="dlk-radio btn-group">
-                        <label class="btn btn-lg btn-success">
-                                <input type="radio" name="docser" ng-model="feedback.docser" value="1">
-                                <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
-                            </label>
-                            <label class="btn btn-lg btn-warning">
-                                <input type="radio" name="docser" ng-model="feedback.docser" value="2">
-                                <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
-                            </label>
-                            <label class="btn btn-lg btn-danger">
-                                <input type="radio" name="docser" ng-model="feedback.docser" value="3">
-                                <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
-                            </label>
-                </div>
-               
-            </div>
+                            </div>
 
+                        </div>
 
-            <div class="row">
-
-                    <div class="col-lg-5 ">
-                    <h2 style="text-align:center;color: blue">
-                        Optometrist
-                    </h2>
-                    </div>
-               
-                  <div class="dlk-radio btn-group">
-                        <label class="btn btn-lg btn-success">
-                                <input type="radio" name="opto" ng-model="feedback.opto" value="1">
-                                <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
-                            </label>
-                            <label class="btn btn-lg btn-warning">
-                                <input type="radio" name="opto" ng-model="feedback.opto" value="2">
-                                <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
-                            </label>
-                            <label class="btn btn-lg btn-danger">
-                                <input type="radio" name="opto" ng-model="feedback.opto" value="3">
-                                <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
-                            </label>
-
-                  </div>
-                                                     
-                </div>
-           
-
-            <div class="row">
-
-                    <div class="col-lg-5 ">
-                            <h2 style="text-align: left;color: blue">
-                        Counseling
-                    </h2>
                     </div>
 
-               
-                  <div class="dlk-radio btn-group">
-                    <label class="btn btn-lg btn-success">
-                        <input type="radio" name="counseling" ng-model="feedback.counseling" value="1">
-                        <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
-                    </label>
-                    <label class="btn btn-lg btn-warning">
-                        <input type="radio" name="counseling" ng-model="feedback.counseling" value="2">
-                        <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
-                    </label>
-                    <label class="btn btn-lg btn-danger">
-                        <input type="radio" name="counseling" ng-model="feedback.counseling" value="3">
-                        <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
-                    </label>
+                    <div class="row">
+                        <div class="container">
+
+                            <h2 style="color: blue;font-size: 26px;">
+                                Doctor's Co-Ordinator
+                            </h2>
+                        </div>
+
+                        <div class="dlk-radio btn-group">
+                            <div class="container">
+                                <label class="btn btn-lg btn-success">
+                                    <input type="radio" name="doccoord" ng-model="feedback.doccoord" value="1">
+                                    <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
+                                </label>
+                                <label class="btn btn-lg btn-warning">
+                                    <input type="radio" name="doccoord" ng-model="feedback.doccoord" value="2">
+                                    <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
+                                </label>
+                                <label class="btn btn-lg btn-danger">
+                                    <input type="radio" name="doccoord" ng-model="feedback.doccoord" value="3">
+                                    <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="container">
+                            <h2 style="color: blue;font-size: 26px;">
+                                Doctor's Service
+                            </h2>
+                        </div>
+
+                        <div class="dlk-radio btn-group">
+                            <div class="container">
+                                <label class="btn btn-lg btn-success">
+                                    <input type="radio" name="docser" ng-model="feedback.docser" value="1">
+                                    <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
+                                </label>
+                                <label class="btn btn-lg btn-warning">
+                                    <input type="radio" name="docser" ng-model="feedback.docser" value="2">
+                                    <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
+                                </label>
+                                <label class="btn btn-lg btn-danger">
+                                    <input type="radio" name="docser" ng-model="feedback.docser" value="3">
+                                    <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="container ">
+                            <h2 style="color: blue;font-size: 26px;">
+                                Optometrist
+                            </h2>
+                        </div>
+
+                        <div class="dlk-radio btn-group">
+                            <div class="container">
+                                <label class="btn btn-lg btn-success">
+                                    <input type="radio" name="opto" ng-model="feedback.opto" value="1">
+                                    <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
+                                </label>
+                                <label class="btn btn-lg btn-warning">
+                                    <input type="radio" name="opto" ng-model="feedback.opto" value="2">
+                                    <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
+                                </label>
+                                <label class="btn btn-lg btn-danger">
+                                    <input type="radio" name="opto" ng-model="feedback.opto" value="3">
+                                    <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
+                                </label>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="container">
+                            <h2 style="color: blue;font-size: 26px;">
+                                Counseling
+                            </h2>
+                        </div>
+
+
+                        <div class="dlk-radio btn-group">
+                            <div class="coatainer">
+                                <label class="btn btn-lg btn-success">
+                                    <input type="radio" name="counseling" ng-model="feedback.counseling" value="1">
+                                    <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
+                                </label>
+                                <label class="btn btn-lg btn-warning">
+                                    <input type="radio" name="counseling" ng-model="feedback.counseling" value="2">
+                                    <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
+                                </label>
+                                <label class="btn btn-lg btn-danger">
+                                    <input type="radio" name="counseling" ng-model="feedback.counseling" value="3">
+                                    <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+
+                        <div class="container">
+
+                                <h2 style="color: blue;font-size: 26px;">
+                                Laboratory
+                            </h2>
+                        </div>
+                        <div class="dlk-radio btn-group">
+                            <div class="container">
+                                <label class="btn btn-lg btn-success">
+                                    <input type="radio" name="lab" ng-model="feedback.lab" value="1">
+                                    <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
+                                </label>
+                                <label class="btn btn-lg btn-warning">
+                                    <input type="radio" name="lab" ng-model="feedback.lab" value="2">
+                                    <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
+                                </label>
+                                <label class="btn btn-lg btn-danger">
+                                    <input type="radio" name="lab" ng-model="feedback.lab" value="3">
+                                    <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="container">
+
+                                <h2 style="color: blue;font-size: 26px;">
+                                Optical
+                            </h2>
+                        </div>
+                        <div class="dlk-radio btn-group">
+                            <div class="container">
+                                <label class="btn btn-lg btn-success">
+                                    <input type="radio" name="optical" ng-model="feedback.optical" value="1">
+                                    <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
+                                </label>
+                                <label class="btn btn-lg btn-warning">
+                                    <input type="radio" name="optical" ng-model="feedback.optical" value="2">
+                                    <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
+                                </label>
+                                <label class="btn btn-lg btn-danger">
+                                    <input type="radio" name="optical" ng-model="feedback.optical" value="3">
+                                    <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="container">
+
+                                <h2 style="color: blue;font-size: 26px;">
+                                Pharmacy
+                            </h2>
+                        </div>
+                        <div class="dlk-radio btn-group">
+                            <div class="container">
+                                <label class="btn btn-lg btn-success">
+                                    <input type="radio" name="pharmacy" ng-model="feedback.pharmacy" value="1">
+                                    <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
+                                </label>
+                                <label class="btn btn-lg btn-warning">
+                                    <input type="radio" name="pharmacy" ng-model="feedback.pharmacy" value="2">
+                                    <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
+                                </label>
+                                <label class="btn btn-lg btn-danger">
+                                    <input type="radio" name="pharmacy" ng-model="feedback.pharmacy" value="3">
+                                    <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="container">
+
+                                <h2 style="color: blue;font-size: 26px;">
+                                Operation Theatre
+                            </h2>
+                        </div>
+                        <div class="dlk-radio btn-group">
+                            <div class="container">
+                                <label class="btn btn-lg btn-success">
+                                    <input type="radio" name="ot" ng-model="feedback.ot" value="1">
+                                    <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
+                                </label>
+                                <label class="btn btn-lg btn-warning">
+                                    <input type="radio" name="ot" ng-model="feedback.ot" value="2">
+                                    <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
+                                </label>
+                                <label class="btn btn-lg btn-danger">
+                                    <input type="radio" name="ot" ng-model="feedback.ot" value="3">
+                                    <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" >
+
+                        <div class="container">
+
+                                <h2 style="color: blue;font-size: 26px;">
+                                Cleaning & Hygiene
+                            </h2>
+                        </div>
+                        <div class="dlk-radio btn-group">
+                            <div class="container">
+                                <label class="btn btn-lg btn-success">
+                                    <input type="radio" name="cleaning" ng-model="feedback.cleaning" value="1">
+                                    <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
+                                </label>
+                                <label class="btn btn-lg btn-warning">
+                                    <input type="radio" name="cleaning" ng-model="feedback.cleaning" value="2">
+                                    <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
+                                </label>
+                                <label class="btn btn-lg btn-danger">
+                                    <input type="radio" name="cleaning" ng-model="feedback.cleaning" value="3">
+                                    <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="container">
+
+                                <h2 style="color: blue;font-size: 26px;">
+                                Overall Feedback
+                            </h2>
+                        </div>
+                        <div class="dlk-radio btn-group">
+                            <div class="container">
+                                <label class="btn btn-lg btn-success">
+                                    <input type="radio" name="overall" ng-model="feedback.overall" value="1">
+                                    <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
+                                </label>
+                                <label class="btn btn-lg btn-warning">
+                                    <input type="radio" name="overall" ng-model="feedback.overall" value="2">
+                                    <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
+                                </label>
+                                <label class="btn btn-lg btn-danger">
+                                    <input type="radio" name="overall" ng-model="feedback.overall" value="3">
+                                    <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
+                                </label>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </div> -->
                 </div>
-            </div>
+            </form>
 
-            <div class="row">
+            <!-- <script>
 
-                    <div class="col-lg-5 ">
+                $("#test1").click(function () {
 
-                    <h2 style="text-align: left;color: blue">
-                        Laboratory
-                    </h2>
-                </div>
-                  <div class="dlk-radio btn-group">
-                    <label class="btn btn-lg btn-success">
-                        <input type="radio" name="lab" ng-model="feedback.lab" value="1">
-                        <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
-                    </label>
-                    <label class="btn btn-lg btn-warning">
-                        <input type="radio" name="lab" ng-model="feedback.lab" value="2">
-                        <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
-                    </label>
-                    <label class="btn btn-lg btn-danger">
-                        <input type="radio" name="lab" ng-model="feedback.lab" value="3">
-                        <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
-                    </label>
-                </div>
-            </div>
-
-            <div class="row">
-
-                    <div class="col-lg-5 ">
-
-                    <h2 style="text-align: left;color: blue">
-                        Optical
-                    </h2>
-                </div>
-                <div class="dlk-radio btn-group">
-                    <label class="btn btn-lg btn-success">
-                        <input type="radio" name="optical" ng-model="feedback.optical" value="1">
-                        <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
-                    </label>
-                    <label class="btn btn-lg btn-warning">
-                        <input type="radio" name="optical" ng-model="feedback.optical" value="2">
-                        <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
-                    </label>
-                    <label class="btn btn-lg btn-danger">
-                        <input type="radio" name="optical" ng-model="feedback.optical" value="3">
-                        <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
-                    </label>
-                </div>
-            </div>
-
-            <div class="row">
-                    <div class="col-lg-5 ">
-
-                    <h2 style="text-align: left;color: blue">
-                        Pharmacy
-                    </h2>
-                </div>
-                  <div class="dlk-radio btn-group">
-                    <label class="btn btn-lg btn-success">
-                        <input type="radio" name="pharmacy" ng-model="feedback.pharmacy" value="1">
-                        <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
-                    </label>
-                    <label class="btn btn-lg btn-warning">
-                        <input type="radio" name="pharmacy" ng-model="feedback.pharmacy" value="2">
-                        <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
-                    </label>
-                    <label class="btn btn-lg btn-danger">
-                        <input type="radio" name="pharmacy" ng-model="feedback.pharmacy" value="3">
-                        <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
-                    </label>
-                </div>
-            </div>
-
-            <div class="row">
-
-                    <div class="col-lg-5 ">
-
-                    <h2 style="text-align: left;color: blue">
-                        Operation Theatre
-                    </h2>
-                </div>
-                  <div class="dlk-radio btn-group">
-                    <label class="btn btn-lg btn-success">
-                        <input type="radio" name="ot" ng-model="feedback.ot" value="1">
-                        <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
-                    </label>
-                    <label class="btn btn-lg btn-warning">
-                        <input type="radio" name="ot" ng-model="feedback.ot" value="2">
-                        <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
-                    </label>
-                    <label class="btn btn-lg btn-danger">
-                        <input type="radio" name="ot" ng-model="feedback.ot" value="3">
-                        <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
-                    </label>
-                </div>
-            </div>
-
-            <div class="row" id="test1">
-
-                    <div class="col-lg-5 ">
-
-                    <h2 style="text-align: left;color: blue">
-                        Cleaning & Hygiene
-                    </h2>
-                </div>
-                <div class="dlk-radio btn-group">
-                    <label class="btn btn-lg btn-success">
-                        <input type="radio" name="cleaning" ng-model="feedback.cleaning" value="1">
-                        <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
-                    </label>
-                    <label class="btn btn-lg btn-warning">
-                        <input type="radio" name="cleaning" ng-model="feedback.cleaning" value="2">
-                        <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
-                    </label>
-                    <label class="btn btn-lg btn-danger">
-                        <input type="radio" name="cleaning" ng-model="feedback.cleaning" value="3">
-                        <i class="fa fa-times glyphicon glyphicon-remove">Poor</i>
-                    </label>
-                </div>
-            </div>
+                    $('#id').show();
 
 
-            <div class="row">
+                });
 
-                    <div class="col-lg-5 ">
-
-                    <h2 style="text-align: left;color: blue">
-                        Overall Feedback
-                    </h2>
-                </div>
-                <div class="dlk-radio btn-group">
-                    <label class="btn btn-lg btn-success">
-                        <input type="radio" name="overall" ng-model="feedback.overall" value="1">
-                        <i class="fa fa-check glyphicon glyphicon-ok">Excellent</i>
-                    </label>
-                    <label class="btn btn-lg btn-warning">
-                        <input type="radio" name="overall" ng-model="feedback.overall" value="2">
-                        <i class="fa fa-warning glyphicon glyphicon-warning-sign">Good</i>
-                    </label>
-                    <label class="btn btn-lg btn-danger">
-                        <input type="radio" name="overall" ng-model="feedback.overall" value="3">
-                        <i class="fa fa-times glyphicon glyphicon-remove">Poor</i> 
-                    </label>
-                   <script>
-                   
-$("#test1").click(function() {
-
-$('#id').show();
-
-
-});
-
-                   </script>
-            </div>
-        </div>
-        </div>
-
-      </form>
-      <style>
-      .dlk-radio input[type="radio"],
+            </script> -->
+            <style>
+                .dlk-radio input[type="radio"],
 .dlk-radio input[type="checkbox"] 
 {
 	margin-left:-99999px;
@@ -396,20 +441,25 @@ $('#id').show();
 }
 .dlk-radio input[type="radio"] + .fa ,
 .dlk-radio input[type="checkbox"] + .fa {
-     opacity:1
+     opacity:1;
+
+    
 }
 .dlk-radio input[type="radio"]:checked + .fa,
 .dlk-radio input[type="checkbox"]:checked + .fa{
-    opacity:0.15
+    opacity:1.25;
+border-color: honeydew;
+border-style: dotted;
+
+  
 }
 
-
       </style>
-  
-    
-	<!-- <div class="well well-lg text-center"> -->
+
+
+            <!-- <div class="well well-lg text-center"> -->
             <!-- <h3>Radio:</h3> -->
-<!-- <div class="col-lg-4">
+            <!-- <div class="col-lg-4">
 <label for="">Reception	&amp; Registration</label>
 </div>
             <div class="dlk-radio btn-group">
@@ -430,7 +480,7 @@ $('#id').show();
         </div>
         </div>
 </form> -->
-<!-- <style>
+            <!-- <style>
 .dlk-radio input[type="radio"],
 .dlk-radio input[type="checkbox"] 
 {
@@ -456,167 +506,169 @@ $('#id').show();
     }
 }
 </style> -->
-<center>
+            <center>
 
-    <input type="button" id="id1"  class="fadeIn fifth"  ng-disabled="form.$invalid" value="Next" disabled='disabled'>
+                <input type="button" id="id1"  style="font-size: 22px;" ng-disabled="form.$invalid" value="Next" >
 
-</center>
-
-
-
-<script>
-$("#id1").click(function(){
-
-
-    $('#contact_form').hide();
-   $('#contact_form1').hide();
-           $('#d').hide();
-           $('#contact_form2').show();
-           $('#next2').show();
-       $('#next1').hide();
-       $('#next').hide();
-
-       
-});
-</script>
+            </center>
 
 
 
-<script>
-
-    $().ready = function () {
-        $('#contact_form1').hide();
-        $('#contact_form2').hide();
-        $('#id1').hide();
-        $('#id2').hide();
-        $('#next2').hide();
-
-        $('#next1').hide();
-    //    $("#id").click(function () {
-          
-
-    //        // $('#contact_form').fadeOut();
-    //         $('#contact_form1').show();
-    //         $('#contact_form2').hide();
-    //         $('#next2').hide();
-    //     $('#id1').show();
-    //     $('#next').hide();
-       
-    //     });
-
-$("#id").click(function () {
-   
-    $('#contact_form').hide();
-            $('#id1').show();
-            $('#contact_form1').show();
-            $('#contact_form2').hide()
-            $('#next2').hide();
-        $('#next1').hide();
-        $('#id').hide();
+            <script>
+                $("#id1").click(function () {
 
 
-        });
+                    $('#contact_form').hide();
+                    $('#contact_form1').hide();
+                    $('#d').hide();
+                    $('#contact_form2').show();
+                    $('#next2').show();
+                    $('#next1').hide();
+                    $('#next').hide();
 
 
-    }();                             
-</script>
+                });
+            </script>
 
 
 
+            <script>
 
-<form class="well form-horizontal" name="form" action=" " method="post" id="contact_form2">
-    <fieldset>
-            <div class="well well-sm text-center">
+                $().ready = function () {
+                    $('#contact_form1').hide();
+                    $('#contact_form2').hide();
+                    $('#id1').hide();
+                    $('#id2').hide();
+                    $('#next2').hide();
+
+                    $('#next1').hide();
+                    //    $("#id").click(function () {
+
+
+                    //        // $('#contact_form').fadeOut();
+                    //         $('#contact_form1').show();
+                    //         $('#contact_form2').hide();
+                    //         $('#next2').hide();
+                    //     $('#id1').show();
+                    //     $('#next').hide();
+
+                    //     });
+
+                    $("#id").click(function () {
+
+                        $('#contact_form').hide();
+                        $('#id1').show();
+                        $('#contact_form1').show();
+                        $('#contact_form2').hide()
+                        $('#next2').hide();
+                        $('#next1').hide();
+                        $('#id').hide();
+
+
+                    });
+
+
+                }();                             
+            </script>
 
 
 
 
-                    <div class="row">
+            <form class="well form-horizontal" name="form" action=" " method="post" id="contact_form2">
+                <fieldset>
+                    <div class="well well-sm text-center">
 
-                        <div class="col-md-4 ">
-                            <h2 style="text-align: left;color: blue">
-                            Will you Recommend our hospital
-                            </h2>
+
+
+
+                        <div class="row">
+
+                            <div class="col-md-4 ">
+                                <h2 style="text-align: left;color: blue;font-size: 26px;padding-top:-30px;">
+                                    Will you Recommend our hospital
+                                </h2>
+                            </div>
+
+                            <div class="dlk-radio btn-group">
+                                <label class="btn btn-lg btn-success">
+                                    <input type="radio" name="recommend" ng-model="feedback.recommend" value="1">
+                                    <i class="fa fa-check glyphicon glyphicon-ok">Yes</i>
+                                </label>
+                                <label class="btn btn-lg btn-warning">
+                                    <input type="radio" name="recommend" ng-model="feedback.recommend" value="2">
+                                    <i class="fa fa-times glyphicon glyphicon-remove">No</i>
+                                </label>
+
+
+                            </div>
                         </div>
 
-                        <div class="dlk-radio btn-group">
-                            <label class="btn btn-lg btn-success">
-                                <input type="radio" name="recommend" ng-model="feedback.recommend" value="1">
-                                <i class="fa fa-check glyphicon glyphicon-ok">Yes</i>
-                            </label>
-                            <label class="btn btn-lg btn-warning">
-                                <input type="radio" name="recommend" ng-model="feedback.recommend" value="2">
-                                <i class="fa fa-times glyphicon glyphicon-remove">No</i> 
-                            </label>
-
-
-                        </div>
-                    </div>
-
-                    <div class="row">
+                        <div class="row">
 
                             <div class="col-md-4">
-                                    <h2 style="text-align: left;color: blue">
+                                <h2 style="text-align: left;color: blue;font-size: 26px;">
                                     Staff who made difference
-                                    </h2>
+                                </h2>
 
-                                </div>
+                            </div>
 
-                                <div class="col-md-8">
-                                        <div class="form-group">
-                                                <input  name="staffdiff" ng-model="feedback.staffdiff" placeholder="Staff Name" class="form-control"  type="text">
-                        
-                                            </div>
-                                </div>
-                                
-                    </div>
-                  
-                    <div class="row">
-
-
-                    <div class="col-md-4">
-                            <h2 style="text-align: left;color: blue">
-                           Remark
-                            </h2>
-
-                        </div>
-
-                        <div class="col-md-8">
+                            <div class="col-md-8">
                                 <div class="form-group">
-                                        <textarea name="remark" rows="6" placeholder="" ng-model="feedback.remark" class="form-control" type="text"></textarea>
-                
-                                    </div>
+                                    <input name="staffdiff" ng-model="feedback.staffdiff" placeholder="Staff Name"
+                                        class="form-control" type="text">
+
+                                </div>
+                            </div>
+
                         </div>
+
+                        <div class="row">
+
+
+                            <div class="col-md-4">
+                                <h2 style="text-align: left;color: blue;font-size: 26px;">
+                                    Remark
+                                </h2>
+
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <textarea name="remark" rows="6" placeholder="" ng-model="feedback.remark" class="form-control"
+                                        type="text"></textarea>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+
 
 
 
                     </div>
 
-               
 
 
-
-           </div>
-           
-          
-        
-    </fieldset>
+                </fieldset>
 
 
-    </form>
- <center>
-            <input type="submit"   class="fadeIn fifth" ng-click="register()" value="Submit" id="next2">
-        
-        
-        </center>
-    <style>
+            </form>
+            <center>
+                <input type="submit" ng-click="register()" value="Submit" style="font-size: 22px;" id="next2">
+
+
+            </center>
+            <!-- <style>
     .fadeIn.fifth {
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
   animation-delay: 1s;
   
 }
-    </style>
+    </style> -->
 
 
         </div>
@@ -624,10 +676,10 @@ $("#id").click(function () {
 
 
 
-          
-            
-              
-        
+
+
+
+
 
 
 
@@ -657,7 +709,7 @@ $("#id").click(function () {
 
 
 
-  
+
 
 
 
@@ -756,19 +808,17 @@ $("#id").click(function () {
     footer p {
         font-size: 1.3em;
     }
-
-
 </style>
 
 
 
 <script>
 
-$("#id1").click(function(){
+    $("#id1").click(function () {
         $('#next1').hide();
         $('#id1').hide();
         $('#id ').hide();
-});
+    });
 </script>
 
 
@@ -779,416 +829,416 @@ $("#id1").click(function(){
 </style>
 
 <script>
-    $(document).ready(function() {
-       $('#contact_form2').bootstrapValidator({
-           // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
-           feedbackIcons: {
-               valid: 'glyphicon glyphicon-ok',
-               invalid: 'glyphicon glyphicon-remove',
-               validating: 'glyphicon glyphicon-refresh'
-           },
-           fields: {
-         
-            recommend: {
-                   validators: {
-                          
-                           notEmpty: {
-                           message: 'Please select any feedback'
-                       }
-                   }
-               },
-               doccoord: {
-                   validators: {
-                          
-                           notEmpty: {
-                           message: 'Please select any feedback'
-                       }
-                   }
-               },docser: {
-                   validators: {
-                          
-                           notEmpty: {
-                           message: 'Please select any feedback'
-                       }
-                   }
-               },opto: {
-                   validators: {
-                          
-                           notEmpty: {
-                           message: 'Please select any feedback'
-                       }
-                   }
-               },counseling: {
-                   validators: {
-                          
-                           notEmpty: {
-                           message: 'Please select any feedback'
-                       }
-                   }
-               },lab: {
-                   validators: {
-                          
-                           notEmpty: {
-                           message: 'Please select any feedback'
-                       }
-                   }
-               },optical: {
-                   validators: {
-                          
-                           notEmpty: {
-                           message: 'Please select any feedback'
-                       }
-                   }
-               },pharmacy: {
-                   validators: {
-                          
-                           notEmpty: {
-                           message: 'Please select any feedback'
-                       }
-                   }
-               },
-               ot: {
-                   validators: {
-                          
-                           notEmpty: {
-                           message: 'Please select any feedback'
-                       }
-                   }
-               },
-               cleaning: {
-                   validators: {
-                          
-                           notEmpty: {
-                           message: 'Please select any feedback'
-                       }
-                   }
-               },
-               overall: {
-                   validators: {
-                          
-                           notEmpty: {
-                           message: 'Please select any feedback'
-                       }
-                   }
-               },
-           
-            
-                last_name: {
-                   validators: {
-                        stringLength: {
-                           min: 2,
-                       },
-                       notEmpty: {
-                           message: 'Please supply your last name'
-                       }
-                   }
-               },
-               email: {
-                   validators: {
-                       notEmpty: {
-                           message: 'Please supply your email address'
-                       },
-                       emailAddress: {
-                           message: 'Please supply a valid email address'
-                       }
-                   }
-               },
-               phone: {
-                   validators: {
-                       notEmpty: {
-                           message: 'Please supply your phone number'
-                       },
-                       phone: {
-                           country: 'US',
-                           message: 'Please supply a vaild phone number with area code'
-                       }
-                   }
-               },
-               address: {
-                   validators: {
-                        stringLength: {
-                           min: 8,
-                       },
-                       notEmpty: {
-                           message: 'Please supply your street address'
-                       }
-                   }
-               },
-               city: {
-                   validators: {
-                        stringLength: {
-                           min: 4,
-                       },
-                       notEmpty: {
-                           message: 'Please supply your city'
-                       }
-                   }
-               },
-               state: {
-                   validators: {
-                       notEmpty: {
-                           message: 'Please select your state'
-                       }
-                   }
-               },
-               zip: {
-                   validators: {
-                       notEmpty: {
-                           message: 'Please supply your zip code'
-                       },
-                       zipCode: {
-                           country: 'US',
-                           message: 'Please supply a vaild zip code'
-                       }
-                   }
-               },
-               comment: {
-                   validators: {
-                         stringLength: {
-                           min: 10,
-                           max: 200,
-                           message:'Please enter at least 10 characters and no more than 200'
-                       },
-                       notEmpty: {
-                           message: 'Please supply a description of your project'
-                       }
-                       }
-                   }
-               }
-           })
-           .on('success.form.bv', function(e) {
-               $('#success_message').slideDown({ opacity: "show" }, "slow")
-                // Do something ...
-                $('#success_message').show("id");
-                   $('#contact_form').data('bootstrapValidator').resetForm();
-   
-               // Prevent form submission
-               e.preventDefault();
-   
-               // Get the form instance
-               var $form = $(e.target);
-   
-               // Get the BootstrapValidator instance
-               var bv = $form.data('bootstrapValidator');
-   
-               // Use Ajax to submit form data
-               $.post($form.attr('action'), $form.serialize(), function(result) {
-                   console.log(result);
-               }, 'json');
-           });
-   });
-   
-   
-   
-       $("#subm").click(function () {
-           $("#contact_form").toggle;
-           $("#contact_form1").hide;
-   
-       });
-   
-   
-   
-   </script>
+    $(document).ready(function () {
+        $('#contact_form2').bootstrapValidator({
+            // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
 
-<script>
- $(document).ready(function() {
-    $('#contact_form1').bootstrapValidator({
-        // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-      
-            recreg: {
-                validators: {
-                       
+                recommend: {
+                    validators: {
+
                         notEmpty: {
-                        message: 'Please select any feedback'
+                            message: 'Please select any feedback'
+                        }
                     }
-                }
-            },
-            doccoord: {
-                validators: {
-                       
+                },
+                doccoord: {
+                    validators: {
+
                         notEmpty: {
-                        message: 'Please select any feedback'
+                            message: 'Please select any feedback'
+                        }
                     }
-                }
-            },docser: {
-                validators: {
-                       
+                }, docser: {
+                    validators: {
+
                         notEmpty: {
-                        message: 'Please select any feedback'
+                            message: 'Please select any feedback'
+                        }
                     }
-                }
-            },opto: {
-                validators: {
-                       
+                }, opto: {
+                    validators: {
+
                         notEmpty: {
-                        message: 'Please select any feedback'
+                            message: 'Please select any feedback'
+                        }
                     }
-                }
-            },counseling: {
-                validators: {
-                       
+                }, counseling: {
+                    validators: {
+
                         notEmpty: {
-                        message: 'Please select any feedback'
+                            message: 'Please select any feedback'
+                        }
                     }
-                }
-            },lab: {
-                validators: {
-                       
+                }, lab: {
+                    validators: {
+
                         notEmpty: {
-                        message: 'Please select any feedback'
+                            message: 'Please select any feedback'
+                        }
                     }
-                }
-            },optical: {
-                validators: {
-                       
+                }, optical: {
+                    validators: {
+
                         notEmpty: {
-                        message: 'Please select any feedback'
+                            message: 'Please select any feedback'
+                        }
                     }
-                }
-            },pharmacy: {
-                validators: {
-                       
+                }, pharmacy: {
+                    validators: {
+
                         notEmpty: {
-                        message: 'Please select any feedback'
+                            message: 'Please select any feedback'
+                        }
                     }
-                }
-            },
-            ot: {
-                validators: {
-                       
+                },
+                ot: {
+                    validators: {
+
                         notEmpty: {
-                        message: 'Please select any feedback'
+                            message: 'Please select any feedback'
+                        }
                     }
-                }
-            },
-            cleaning: {
-                validators: {
-                       
+                },
+                cleaning: {
+                    validators: {
+
                         notEmpty: {
-                        message: 'Please select any feedback'
+                            message: 'Please select any feedback'
+                        }
                     }
-                }
-            },
-            overall: {
-                validators: {
-                       
+                },
+                overall: {
+                    validators: {
+
                         notEmpty: {
-                        message: 'Please select any feedback'
+                            message: 'Please select any feedback'
+                        }
                     }
-                }
-            },
-        
-         
-             last_name: {
-                validators: {
-                     stringLength: {
-                        min: 2,
-                    },
-                    notEmpty: {
-                        message: 'Please supply your last name'
+                },
+
+
+                last_name: {
+                    validators: {
+                        stringLength: {
+                            min: 2,
+                        },
+                        notEmpty: {
+                            message: 'Please supply your last name'
+                        }
                     }
-                }
-            },
-            email: {
-                validators: {
-                    notEmpty: {
-                        message: 'Please supply your email address'
-                    },
-                    emailAddress: {
-                        message: 'Please supply a valid email address'
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please supply your email address'
+                        },
+                        emailAddress: {
+                            message: 'Please supply a valid email address'
+                        }
                     }
-                }
-            },
-            phone: {
-                validators: {
-                    notEmpty: {
-                        message: 'Please supply your phone number'
-                    },
-                    phone: {
-                        country: 'US',
-                        message: 'Please supply a vaild phone number with area code'
+                },
+                phone: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please supply your phone number'
+                        },
+                        phone: {
+                            country: 'US',
+                            message: 'Please supply a vaild phone number with area code'
+                        }
                     }
-                }
-            },
-            address: {
-                validators: {
-                     stringLength: {
-                        min: 8,
-                    },
-                    notEmpty: {
-                        message: 'Please supply your street address'
+                },
+                address: {
+                    validators: {
+                        stringLength: {
+                            min: 8,
+                        },
+                        notEmpty: {
+                            message: 'Please supply your street address'
+                        }
                     }
-                }
-            },
-            city: {
-                validators: {
-                     stringLength: {
-                        min: 4,
-                    },
-                    notEmpty: {
-                        message: 'Please supply your city'
+                },
+                city: {
+                    validators: {
+                        stringLength: {
+                            min: 4,
+                        },
+                        notEmpty: {
+                            message: 'Please supply your city'
+                        }
                     }
-                }
-            },
-            state: {
-                validators: {
-                    notEmpty: {
-                        message: 'Please select your state'
+                },
+                state: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please select your state'
+                        }
                     }
-                }
-            },
-            zip: {
-                validators: {
-                    notEmpty: {
-                        message: 'Please supply your zip code'
-                    },
-                    zipCode: {
-                        country: 'US',
-                        message: 'Please supply a vaild zip code'
+                },
+                zip: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please supply your zip code'
+                        },
+                        zipCode: {
+                            country: 'US',
+                            message: 'Please supply a vaild zip code'
+                        }
                     }
-                }
-            },
-            comment: {
-                validators: {
-                      stringLength: {
-                        min: 10,
-                        max: 200,
-                        message:'Please enter at least 10 characters and no more than 200'
-                    },
-                    notEmpty: {
-                        message: 'Please supply a description of your project'
-                    }
+                },
+                comment: {
+                    validators: {
+                        stringLength: {
+                            min: 10,
+                            max: 200,
+                            message: 'Please enter at least 10 characters and no more than 200'
+                        },
+                        notEmpty: {
+                            message: 'Please supply a description of your project'
+                        }
                     }
                 }
             }
         })
-        .on('success.form.bv', function(e) {
-            $('#success_message').slideDown({ opacity: "show" }, "slow")
-             // Do something ...
-             $('#success_message').show("id");
+            .on('success.form.bv', function (e) {
+                $('#success_message').slideDown({ opacity: "show" }, "slow")
+                // Do something ...
+                $('#success_message').show("id");
                 $('#contact_form').data('bootstrapValidator').resetForm();
 
-            // Prevent form submission
-            e.preventDefault();
+                // Prevent form submission
+                e.preventDefault();
 
-            // Get the form instance
-            var $form = $(e.target);
+                // Get the form instance
+                var $form = $(e.target);
 
-            // Get the BootstrapValidator instance
-            var bv = $form.data('bootstrapValidator');
+                // Get the BootstrapValidator instance
+                var bv = $form.data('bootstrapValidator');
 
-            // Use Ajax to submit form data
-            $.post($form.attr('action'), $form.serialize(), function(result) {
-                console.log(result);
-            }, 'json');
-        });
-});
+                // Use Ajax to submit form data
+                $.post($form.attr('action'), $form.serialize(), function (result) {
+                    console.log(result);
+                }, 'json');
+            });
+    });
+
+
+
+    $("#subm").click(function () {
+        $("#contact_form").toggle;
+        $("#contact_form1").hide;
+
+    });
+
+
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#contact_form1').bootstrapValidator({
+            // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+
+                recreg: {
+                    validators: {
+
+                        notEmpty: {
+                            message: 'Please select any feedback'
+                        }
+                    }
+                },
+                doccoord: {
+                    validators: {
+
+                        notEmpty: {
+                            message: 'Please select any feedback'
+                        }
+                    }
+                }, docser: {
+                    validators: {
+
+                        notEmpty: {
+                            message: 'Please select any feedback'
+                        }
+                    }
+                }, opto: {
+                    validators: {
+
+                        notEmpty: {
+                            message: 'Please select any feedback'
+                        }
+                    }
+                }, counseling: {
+                    validators: {
+
+                        notEmpty: {
+                            message: 'Please select any feedback'
+                        }
+                    }
+                }, lab: {
+                    validators: {
+
+                        notEmpty: {
+                            message: 'Please select any feedback'
+                        }
+                    }
+                }, optical: {
+                    validators: {
+
+                        notEmpty: {
+                            message: 'Please select any feedback'
+                        }
+                    }
+                }, pharmacy: {
+                    validators: {
+
+                        notEmpty: {
+                            message: 'Please select any feedback'
+                        }
+                    }
+                },
+                ot: {
+                    validators: {
+
+                        notEmpty: {
+                            message: 'Please select any feedback'
+                        }
+                    }
+                },
+                cleaning: {
+                    validators: {
+
+                        notEmpty: {
+                            message: 'Please select any feedback'
+                        }
+                    }
+                },
+                overall: {
+                    validators: {
+
+                        notEmpty: {
+                            message: 'Please select any feedback'
+                        }
+                    }
+                },
+
+
+                last_name: {
+                    validators: {
+                        stringLength: {
+                            min: 2,
+                        },
+                        notEmpty: {
+                            message: 'Please supply your last name'
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please supply your email address'
+                        },
+                        emailAddress: {
+                            message: 'Please supply a valid email address'
+                        }
+                    }
+                },
+                tel: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please supply your phone number'
+                        },
+                        phone: {
+                            country: 'US',
+                            message: 'Please supply a vaild phone number with area code'
+                        }
+                    }
+                },
+                address: {
+                    validators: {
+                        stringLength: {
+                            min: 8,
+                        },
+                        notEmpty: {
+                            message: 'Please supply your street address'
+                        }
+                    }
+                },
+                city: {
+                    validators: {
+                        stringLength: {
+                            min: 4,
+                        },
+                        notEmpty: {
+                            message: 'Please supply your city'
+                        }
+                    }
+                },
+                state: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please select your state'
+                        }
+                    }
+                },
+                zip: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please supply your zip code'
+                        },
+                        zipCode: {
+                            country: 'US',
+                            message: 'Please supply a vaild zip code'
+                        }
+                    }
+                },
+                comment: {
+                    validators: {
+                        stringLength: {
+                            min: 10,
+                            max: 200,
+                            message: 'Please enter at least 10 characters and no more than 200'
+                        },
+                        notEmpty: {
+                            message: 'Please supply a description of your project'
+                        }
+                    }
+                }
+            }
+        })
+            .on('success.form.bv', function (e) {
+                $('#success_message').slideDown({ opacity: "show" }, "slow")
+                // Do something ...
+                $('#success_message').show("id");
+                $('#contact_form').data('bootstrapValidator').resetForm();
+
+                // Prevent form submission
+                e.preventDefault();
+
+                // Get the form instance
+                var $form = $(e.target);
+
+                // Get the BootstrapValidator instance
+                var bv = $form.data('bootstrapValidator');
+
+                // Use Ajax to submit form data
+                $.post($form.attr('action'), $form.serialize(), function (result) {
+                    console.log(result);
+                }, 'json');
+            });
+    });
 
 
 
@@ -1222,10 +1272,14 @@ $("#id1").click(function(){
                             },
                             notEmpty: {
                                 message: 'Please supply your patient name'
-                            }
+                            },
+                            regexp: {
+                            regexp: /^[a-zA-Z_]+$/,
+                            message: 'The name can only consist of alphabetical, number and underscore'
+                        }
                         }
                     },
-                    
+
                     fmobile: {
                         validators: {
                             notEmpty: {
@@ -1235,9 +1289,10 @@ $("#id1").click(function(){
                             stringLength: {
                                 min: 10,
 
-                            },
+                            }
+                            ,
                             fmobile: {
-                                country: 'IND',
+                                country: 'IN',
                                 message: 'Please supply a vaild phone number with area code'
 
                             }
@@ -1264,8 +1319,17 @@ $("#id1").click(function(){
                     $.post($form.attr('action'), $form.serialize(), function (result) {
                         console.log(result);
                     }, 'json');
-                });
-
+                })
+                .on('error.field.bv', '[name="fmobile"]', function(e, data){
+    // change the data-bv-trigger value to keydown
+    $(e.target).attr('data-bv-trigger','keydown');
+    // destroy the plugin
+    // console.info(data.bv.getOptions());
+    data.bv.destroy();
+    // console.info(data.bv.getOptions());
+    // initialize the plugin
+    $('#contact_form').bootstrapValidator(data.bv.getOptions());
+});
 
         }
 
