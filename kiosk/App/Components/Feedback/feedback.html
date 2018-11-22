@@ -14,20 +14,19 @@
 <div class="container">
     <div class="wrapper fadeInDown">
         <br><br><br><br><br>
-        
+
         <div id="formContent">
-            <!-- <div class="fadeIn first">
-                    <h1>Feedback</h1>
-                </div> -->
-            <form class="well form-horizontal"  name="form" method="post" id="contact_form">
+            <div class="fadeIn first">
+                <h1>Feedback</h1>
+            </div>
+            <form class="well form-horizontal" name="contactform" method="post" id="contact_form">
 
                 <div class="fadeIn first">
                     <h3>Enter Patient Name</h3>
                 </div>
 
                 <div class="form-group">
-                    <input name="fname"  placeholder="    " required ng-model="feedback.fname"
-                        class="form-control" type="text">
+                    <input name="fname" placeholder="    " required ng-model="feedback.fname" class="form-control" type="text">
 
                 </div>
 
@@ -37,19 +36,42 @@
 
                 <div class="form-group">
                     <input name="fmobile" placeholder="" id="phnm" ng-model="feedback.fmobile" pattern="^[6789]\d{9}$"
-                        maxlength="10"  required type="tel" id="mobile"  class="fadeIn second">
+                        maxlength="10" required type="tel" id="mobile" class="fadeIn second">
                 </div>
+                <!--
+                <input type="text" id="message"/>
+<input type="button" class="sendButton" value="submit"></input> -->
 
+                <!-- <input type="text" name="textField" /> -->
+                <!-- <textarea rows="4" cols="30" id="texta"></textarea> -->
+                <input type="button" id="contactFormSubmit" value="next" ng-click="contactForm()" />
 
             </form>
             <center>
 
-                <input type="button" id="id" disabled class="fadeIn fourth" style="font-size: 22px;" value="Next">
+                <!-- <input type="button" id="id" disabled class="fadeIn fourth" style="font-size: 22px;" value="Next"> -->
 
             </center>
 
 
-<script>
+            <script>
+
+                $(document).ready(function () {
+                    $('input[type="submit"]').attr('disabled', true);
+                    $('input[type="text"],textarea').on('keyup', function () {
+                        var textarea_value = $("#phnm").val();
+                        var text_value = $('input[name="fname"]').val();
+                        if (textarea_value != '' && text_value != '') {
+                            $('input[type="submit"]').attr('disabled', false);
+                        } else {
+                            $('input[type="submit"]').attr('disabled', true);
+                        }
+                    });
+                });
+
+            </script>
+
+            <script>
 // function phn(){
 //     if(document.getElementById("phn") > 0) { 
 //             document.getElementById('id').disabled = false; 
@@ -67,7 +89,7 @@
 // {
 //     document.getElementById('id').disabled = true; 
 // }
-</script>
+            </script>
 
 
             <style>
@@ -128,17 +150,17 @@
                                 <label class="btn btn-lg btn-success">
                                     <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio"
                                         value="1">
-                                        <i class="fa" >Excellent</i>
+                                    <i class="fa">Excellent</i>
                                 </label>
                                 <label class="btn btn-lg btn-warning">
                                     <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio"
                                         value="2" defaultchecked="checked">
-                                        <i class="fa">Good</i>
+                                    <i class="fa">Good</i>
                                 </label>
                                 <label class="btn btn-lg btn-danger">
                                     <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio"
                                         value="3" defaultchecked="checked">
-                                        <i class="fa">Poor</i> 
+                                    <i class="fa">Poor</i>
                                 </label>
 
                             </div>
@@ -267,7 +289,7 @@
 
                         <div class="container">
 
-                                <h2 style="color: blue;font-size: 26px;">
+                            <h2 style="color: blue;font-size: 26px;">
                                 Laboratory
                             </h2>
                         </div>
@@ -293,7 +315,7 @@
 
                         <div class="container">
 
-                                <h2 style="color: blue;font-size: 26px;">
+                            <h2 style="color: blue;font-size: 26px;">
                                 Optical
                             </h2>
                         </div>
@@ -318,7 +340,7 @@
                     <div class="row">
                         <div class="container">
 
-                                <h2 style="color: blue;font-size: 26px;">
+                            <h2 style="color: blue;font-size: 26px;">
                                 Pharmacy
                             </h2>
                         </div>
@@ -344,7 +366,7 @@
 
                         <div class="container">
 
-                                <h2 style="color: blue;font-size: 26px;">
+                            <h2 style="color: blue;font-size: 26px;">
                                 Operation Theatre
                             </h2>
                         </div>
@@ -366,11 +388,11 @@
                         </div>
                     </div>
 
-                    <div class="row" >
+                    <div class="row">
 
                         <div class="container">
 
-                                <h2 style="color: blue;font-size: 26px;">
+                            <h2 style="color: blue;font-size: 26px;">
                                 Cleaning & Hygiene
                             </h2>
                         </div>
@@ -396,7 +418,7 @@
 
                         <div class="container">
 
-                                <h2 style="color: blue;font-size: 26px;">
+                            <h2 style="color: blue;font-size: 26px;">
                                 Overall Feedback
                             </h2>
                         </div>
@@ -508,7 +530,7 @@ color: white;
 </style> -->
             <center>
 
-                <input type="button" id="id1"  style="font-size: 22px;" ng-disabled="form.$invalid" value="Next" >
+                <input type="button" id="id1" style="font-size: 22px;" ng-disabled="form.$invalid" value="Next">
 
             </center>
 
@@ -554,20 +576,20 @@ color: white;
 
                     //     });
 
-                    $("#id").click(function () {
+                    // $("#id").click(function () {
+                    //     var contactformName = document.getElementById("fname");
+                    //     var contactMobileNumber = document.getElementById("fmobile");
 
-                        $('#contact_form').hide();
-                        $('#id1').show();
-                        $('#contact_form1').show();
-                        $('#contact_form2').hide()
-                        $('#next2').hide();
-                        $('#next1').hide();
-                        $('#id').hide();
-
-
-                    });
-
-
+                    //     if (contactformName && contactMobileNumber) {
+                    //         $('#contact_form').hide();
+                    //         $('#id1').show();
+                    //         $('#contact_form1').show();
+                    //         $('#contact_form2').hide()
+                    //         $('#next2').hide();
+                    //         $('#next1').hide();
+                    //         $('#id').hide();
+                    //     }
+                    // });
                 }();                             
             </script>
 
@@ -1274,9 +1296,9 @@ color: white;
                                 message: 'Please supply your patient name'
                             },
                             regexp: {
-                            regexp: /^[a-zA-Z_]+$/,
-                            message: 'The name can only consist of alphabetical, number and underscore'
-                        }
+                                regexp: /^[a-zA-Z_]+$/,
+                                message: 'The name can only consist of alphabetical, number and underscore'
+                            }
                         }
                     },
 
@@ -1320,16 +1342,16 @@ color: white;
                         console.log(result);
                     }, 'json');
                 })
-                .on('error.field.bv', '[name="fmobile"]', function(e, data){
-    // change the data-bv-trigger value to keydown
-    $(e.target).attr('data-bv-trigger','keydown');
-    // destroy the plugin
-    // console.info(data.bv.getOptions());
-    data.bv.destroy();
-    // console.info(data.bv.getOptions());
-    // initialize the plugin
-    $('#contact_form').bootstrapValidator(data.bv.getOptions());
-});
+                .on('error.field.bv', '[name="fmobile"]', function (e, data) {
+                    // change the data-bv-trigger value to keydown
+                    $(e.target).attr('data-bv-trigger', 'keydown');
+                    // destroy the plugin
+                    // console.info(data.bv.getOptions());
+                    data.bv.destroy();
+                    // console.info(data.bv.getOptions());
+                    // initialize the plugin
+                    $('#contact_form').bootstrapValidator(data.bv.getOptions());
+                });
 
         }
 
