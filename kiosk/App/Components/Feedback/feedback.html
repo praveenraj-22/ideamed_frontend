@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input name="fname" placeholder="    " required ng-model="feedback.fname" class="form-control" type="text">
+                    <input name="fname" id="fname2" placeholder="    " required ng-model="feedback.fname" class="form-control" type="text">
 
                 </div>
 
@@ -53,6 +53,31 @@
 
             </center>
 
+            <script>
+            $(function() {
+
+$('#fname2').keydown(function (e) {
+
+  if (e.shiftKey || e.ctrlKey || e.altKey) {
+  
+    e.preventDefault();
+    
+  } else {
+  
+    var key = e.keyCode;
+    
+    if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+    
+      e.preventDefault();
+      
+    }
+
+  }
+  
+});
+
+});
+            </script>
 
             <script>
 
