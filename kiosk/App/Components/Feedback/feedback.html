@@ -1,19 +1,7 @@
-<!-- <div class="container"> -->
-<!-- 
-    <div class="container">
-        <center>
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Feedback</a></li>
-            </ol>
-      </center>
-
-
-    </div> -->
 
 <div class="container">
     <div class="wrapper fadeInDown">
-        <br><br><br><br><br>
+
 
         <div id="formContent">
             <div class="fadeIn first">
@@ -21,12 +9,24 @@
             </div>
             <form class="well form-horizontal" name="contactform" method="post" id="contact_form">
 
+
+                <div class="fadeIn first">
+                    <h3>Enter Patient MRN No</h3>
+                </div>
+
+                <div class="form-group">
+                    <input name="pmrnno" id="" placeholder="" required ng-model="feedback.pmrnno" class="form-control"
+                        type="text">
+
+                </div>
+
                 <div class="fadeIn first">
                     <h3>Enter Patient Name</h3>
                 </div>
 
                 <div class="form-group">
-                    <input name="fname" id="fname2" placeholder="    " required ng-model="feedback.fname" class="form-control" type="text">
+                    <input name="pname" id="pname2" placeholder="" required ng-model="feedback.pname" class="form-control"
+                        type="text">
 
                 </div>
 
@@ -35,48 +35,41 @@
                 </div>
 
                 <div class="form-group">
-                    <input name="fmobile" placeholder="" id="phnm" ng-model="feedback.fmobile" pattern="^[6789]\d{9}$"
+                    <input name="pmobile" placeholder="" id="phnm" ng-model="feedback.pmobile" pattern="^[6789]\d{9}$"
                         maxlength="10" required type="tel" id="mobile" class="fadeIn second">
                 </div>
-                <!--
-                <input type="text" id="message"/>
-<input type="button" class="sendButton" value="submit"></input> -->
 
-                <!-- <input type="text" name="textField" /> -->
-                <!-- <textarea rows="4" cols="30" id="texta"></textarea> -->
+
+
                 <input type="button" id="contactFormSubmit" value="next" style="font-size: 22px;" ng-click="contactForm()" />
 
             </form>
-            <center>
 
-                <!-- <input type="button" id="id" disabled class="fadeIn fourth" style="font-size: 22px;" value="Next"> -->
-
-            </center>
-
+        
             <script>
-            $(function() {
+                $(function () {
 
-$('#fname2').keydown(function (e) {
+                    $('#fname2').keydown(function (e) {
 
-  if (e.shiftKey || e.ctrlKey || e.altKey) {
-  
-    e.preventDefault();
-    
-  } else {
-  
-    var key = e.keyCode;
-    
-    if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
-    
-      e.preventDefault();
-      
-    }
+                        if (e.shiftKey || e.ctrlKey || e.altKey) {
 
-  }
-  
-});
+                            e.preventDefault();
 
-});
+                        } else {
+
+                            var key = e.keyCode;
+
+                            if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+
+                                e.preventDefault();
+
+                            }
+
+                        }
+
+                    });
+
+                });
             </script>
 
             <script>
@@ -96,25 +89,6 @@ $('#fname2').keydown(function (e) {
 
             </script>
 
-            <script>
-// function phn(){
-//     if(document.getElementById("phn") > 0) { 
-//             document.getElementById('id').disabled = false; 
-//         } else { 
-//             document.getElementById('id').disabled = true;
-//         }
-// //}
-// $("#id").hide()
-// if(document.getElementById("phnm").val>0)
-// {
-//     $("#id").show();
-
-// }
-// else
-// {
-//     document.getElementById('id').disabled = true; 
-// }
-            </script>
 
 
             <style>
@@ -156,11 +130,9 @@ $('#fname2').keydown(function (e) {
                 });
 
             </script>
-            <form id="contact_form1">
+            <form class="well form-horizontal" name="contactform1" method="post" id="contact_form1">
 
                 <div class="well well-md text-center">
-
-                    <!-- <div class="well well-md text-left"> -->
                     <div class="row">
 
 
@@ -172,6 +144,8 @@ $('#fname2').keydown(function (e) {
 
                             </div>
                             <div class="container">
+
+
                                 <label class="btn btn-lg btn-success">
                                     <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio"
                                         value="1">
@@ -193,6 +167,7 @@ $('#fname2').keydown(function (e) {
                         </div>
 
                     </div>
+         
 
                     <div class="row">
                         <div class="container">
@@ -291,7 +266,7 @@ $('#fname2').keydown(function (e) {
 
 
                         <div class="dlk-radio btn-group">
-                            <div class="coatainer">
+                            <div class="container">
                                 <label class="btn btn-lg btn-success">
                                     <input type="radio" name="counseling" ng-model="feedback.counseling" value="1">
                                     <i class="fa">Excellent</i>
@@ -467,18 +442,15 @@ $('#fname2').keydown(function (e) {
                     </div>
                     <!-- </div> -->
                 </div>
+
+             
+                    <!-- <input type="button" id="contactFormSubmit1" value="next" style="font-size: 22px;" ng-click="contactForm1()">
+          -->
+          <input type="button" id="id1" style="font-size: 22px;" ng-disabled="form.$invalid" value="Next">
+
             </form>
 
-            <!-- <script>
-
-                $("#test1").click(function () {
-
-                    $('#id').show();
-
-
-                });
-
-            </script> -->
+        
             <style>
                 .dlk-radio input[type="radio"],
 .dlk-radio input[type="checkbox"] 
@@ -504,61 +476,8 @@ color: white;
       </style>
 
 
-            <!-- <div class="well well-lg text-center"> -->
-            <!-- <h3>Radio:</h3> -->
-            <!-- <div class="col-lg-4">
-<label for="">Reception	&amp; Registration</label>
-</div>
-            <div class="dlk-radio btn-group">
-                
-            <label class="btn btn-lg btn-success">
-                <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio" value="1">
-                <i class="fa fa-check glyphicon glyphicon-ok"></i>Excellent
-           </label>
-           <label class="btn btn-lg btn-warning">
-               <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio" value="2" defaultchecked="checked">
-               <i class="fa fa-warning glyphicon glyphicon-warning-sign"></i>Good
-           </label>
-           <label class="btn btn-lg btn-danger">
-               <input name="recreg" ng-model="feedback.recreg" class="form-control" type="radio" value="3" defaultchecked="checked">
-               <i class="fa fa-times glyphicon glyphicon-remove"></i>Poor
-           </label>
            
-        </div>
-        </div>
-</form> -->
-            <!-- <style>
-.dlk-radio input[type="radio"],
-.dlk-radio input[type="checkbox"] 
-{
-	margin-left:-99999px;
-	display:none;
-}
-.dlk-radio input[type="radio"] + .fa ,
-.dlk-radio input[type="checkbox"] + .fa {
-     opacity:0.15
-}
-.dlk-radio input[type="radio"]:checked + .fa,
-.dlk-radio input[type="checkbox"]:checked + .fa{
-    opacity:1
-}
-
-@media (min-width: 375px)
-{
-    .btn-group-lg>.btn, .btn-lg {
-        padding: 10px 16px;
-    font-size: 10px;
-    line-height: 1.3333333;
-    border-radius: 6px;
-    }
-}
-</style> -->
-            <center>
-
-                <input type="button" id="id1" style="font-size: 22px;" ng-disabled="form.$invalid" value="Next">
-
-            </center>
-
+         
 
 
             <script>
@@ -584,7 +503,7 @@ color: white;
                 $().ready = function () {
                     $('#contact_form1').hide();
                     $('#contact_form2').hide();
-                    $('#id1').hide();
+                    $('#contactFormSubmit1').hide();
                     $('#id2').hide();
                     $('#next2').hide();
 
@@ -708,14 +627,7 @@ color: white;
 
 
             </center>
-            <!-- <style>
-    .fadeIn.fifth {
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  animation-delay: 1s;
-  
-}
-    </style> -->
+      
 
 
         </div>
@@ -878,7 +790,7 @@ color: white;
 <script>
     $(document).ready(function () {
         $('#contact_form2').bootstrapValidator({
-            // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+           
             feedbackIcons: {
                 valid: 'glyphicon glyphicon-ok',
                 invalid: 'glyphicon glyphicon-remove',
@@ -968,6 +880,15 @@ color: white;
                         }
                     }
                 },
+                recreg: {
+                    validators: {
+
+                        notEmpty: {
+                            message: 'Please select any feedback'
+                        }
+                    }
+                },
+
 
 
                 last_name: {
