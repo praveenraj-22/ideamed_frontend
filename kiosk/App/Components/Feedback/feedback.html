@@ -9,16 +9,16 @@
             </div>
             <form class="well form-horizontal" name="contactform" method="post" id="contact_form">
 
-
                 <div class="fadeIn first">
-                    <h3>Enter Patient MRN No</h3>
+                    <h3>Enter Mobile Number</h3>
                 </div>
 
                 <div class="form-group">
-                    <input name="pmrnno" id="" placeholder="" required ng-model="feedback.pmrnno" class="form-control"
-                        type="text">
-
+                    <input name="pmobile" placeholder="" id="phnm" ng-model="feedback.pmobile" pattern="^[6789]\d{9}$"
+                        maxlength="10" required type="tel" value="+91"  class="fadeIn second">
                 </div>
+
+             
 
                 <div class="fadeIn first">
                     <h3>Enter Patient Name</h3>
@@ -30,13 +30,15 @@
 
                 </div>
 
+                
                 <div class="fadeIn first">
-                    <h3>Enter Mobile Number</h3>
+                    <h3>Enter Patient MRN No</h3>
                 </div>
 
                 <div class="form-group">
-                    <input name="pmobile" placeholder="" id="phnm" ng-model="feedback.pmobile" pattern="^[6789]\d{9}$"
-                        maxlength="10" required type="number" id="mobile" class="fadeIn second">
+                    <input name="pmrnno" id="" placeholder=""  ng-model="feedback.pmrnno" class="form-control"
+                        type="text">
+
                 </div>
 
 
@@ -112,7 +114,7 @@
                     display: none;
                 }
             </style>
-
+<!-- 
             <script>
                 $(document).ready(function () {
                     $('input[type="button"]').attr('disabled', true);
@@ -129,7 +131,7 @@
                     });
                 });
 
-            </script>
+            </script> -->
             <form class="well form-horizontal" name="contactform1" method="post" id="contact_form1">
 
                 <div class="well well-md text-center">
@@ -540,7 +542,7 @@ color: white;
 
 
 
-            <form class="well form-horizontal" name="form" action=" " method="post" id="contact_form2">
+            <form class="well form-horizontal"  id="contact_form2">
                 <fieldset>
                     <div class="well well-sm text-center">
 
@@ -601,7 +603,7 @@ color: white;
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <textarea name="remark" rows="6" placeholder="" ng-model="feedback.remark" class="form-control"
-                                        type="text"></textarea>
+                                        type="textarea"></textarea>
 
                                 </div>
                             </div>
@@ -788,7 +790,7 @@ color: white;
     }
 </style>
 
-<script>
+<!-- <script>
     $(document).ready(function () {
         $('#contact_form2').bootstrapValidator({
            
@@ -912,17 +914,18 @@ color: white;
                         }
                     }
                 },
-                phone: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Please supply your phone number'
-                        },
-                        phone: {
-                            country: 'US',
-                            message: 'Please supply a vaild phone number with area code'
-                        }
-                    }
-                },
+                // phone: {
+                //     validators: {
+                //         notEmpty: {
+                //             message: 'Please supply your phone number'
+                //         },
+                //         phone: {
+                //             country: 'US',
+                //             message: 'Please supply a vaild phone number with area code'
+                //         }
+                //     }
+                // },
+                
                 address: {
                     validators: {
                         stringLength: {
@@ -1007,7 +1010,7 @@ color: white;
 
 
 
-</script>
+</script> -->
 
 <script>
     $(document).ready(function () {
@@ -1104,87 +1107,87 @@ color: white;
                 },
 
 
-                last_name: {
-                    validators: {
-                        stringLength: {
-                            min: 2,
-                        },
-                        notEmpty: {
-                            message: 'Please supply your last name'
-                        }
-                    }
-                },
-                email: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Please supply your email address'
-                        },
-                        emailAddress: {
-                            message: 'Please supply a valid email address'
-                        }
-                    }
-                },
-                tel: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Please supply your phone number'
-                        },
-                        phone: {
-                            country: 'US',
-                            message: 'Please supply a vaild phone number with area code'
-                        }
-                    }
-                },
-                address: {
-                    validators: {
-                        stringLength: {
-                            min: 8,
-                        },
-                        notEmpty: {
-                            message: 'Please supply your street address'
-                        }
-                    }
-                },
-                city: {
-                    validators: {
-                        stringLength: {
-                            min: 4,
-                        },
-                        notEmpty: {
-                            message: 'Please supply your city'
-                        }
-                    }
-                },
-                state: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Please select your state'
-                        }
-                    }
-                },
-                zip: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Please supply your zip code'
-                        },
-                        zipCode: {
-                            country: 'US',
-                            message: 'Please supply a vaild zip code'
-                        }
-                    }
-                },
-                comment: {
-                    validators: {
-                        stringLength: {
-                            min: 10,
-                            max: 200,
-                            message: 'Please enter at least 10 characters and no more than 200'
-                        },
-                        notEmpty: {
-                            message: 'Please supply a description of your project'
-                        }
-                    }
-                }
+                // last_name: {
+                //     validators: {
+                //         stringLength: {
+                //             min: 2,
+                //         },
+                //         notEmpty: {
+                //             message: 'Please supply your last name'
+                //         }
+                //     }
+                // },
+                // email: {
+                //     validators: {
+                //         notEmpty: {
+                //             message: 'Please supply your email address'
+                //         },
+                //         emailAddress: {
+                //             message: 'Please supply a valid email address'
+                //         }
+                //     }
+                // },
+                // tel: {
+                //     validators: {
+                //         notEmpty: {
+                //             message: 'Please supply your phone number'
+                //         },
+                //         phone: {
+                //             country: 'US',
+                //             message: 'Please supply a vaild phone number with area code'
+                //         }
+                //     }
+                // },
+                // address: {
+                //     validators: {
+                //         stringLength: {
+                //             min: 8,
+                //         },
+                //         notEmpty: {
+                //             message: 'Please supply your street address'
+                //         }
+                //     }
+                // },
+                // city: {
+                //     validators: {
+                //         stringLength: {
+                //             min: 4,
+                //         },
+                //         notEmpty: {
+                //             message: 'Please supply your city'
+                //         }
+                //     }
+                // },
+                // state: {
+                //     validators: {
+                //         notEmpty: {
+                //             message: 'Please select your state'
+                //         }
+                //     }
+                // },
+                // zip: {
+                //     validators: {
+                //         notEmpty: {
+                //             message: 'Please supply your zip code'
+                //         },
+                //         zipCode: {
+                //             country: 'US',
+                //             message: 'Please supply a vaild zip code'
+                //         }
+                //     }
+                // },
+                // comment: {
+                //     validators: {
+                //         stringLength: {
+                //             min: 10,
+                //             max: 200,
+                //             message: 'Please enter at least 10 characters and no more than 200'
+                //         },
+                //         notEmpty: {
+                //             message: 'Please supply a description of your project'
+                //         }
+                //     }
+                // }
             }
         })
             .on('success.form.bv', function (e) {
@@ -1249,24 +1252,24 @@ color: white;
                         }
                     },
 
-                    pmobile: {
-                        validators: {
-                            notEmpty: {
-                                message: 'Please supply your phone number',
+                    // pmobile: {
+                    //     validators: {
+                    //         notEmpty: {
+                    //             message: 'Please supply your phone number',
 
-                            },
-                            stringLength: {
-                                min: 10,
+                    //         },
+                    //         stringLength: {
+                    //             min: 10,
 
-                            }
-                            ,
-                            pmobile: {
-                                country: 'IN',
-                                message: 'Please supply a vaild phone number with area code'
+                    //         }
+                    //         // ,
+                    //         // pmobile: {
+                    //         //     country: 'IN',
+                    //         //     message: 'Please supply a vaild phone number with area code'
 
-                            }
-                        }
-                    }
+                    //         // }
+                    //     }
+                    // }
 
                 }
             })
