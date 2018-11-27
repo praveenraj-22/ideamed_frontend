@@ -36,7 +36,7 @@
 
                 <div class="form-group">
                     <input name="pmobile" placeholder="" id="phnm" ng-model="feedback.pmobile" pattern="^[6789]\d{9}$"
-                        maxlength="10" required type="tel" id="mobile" class="fadeIn second">
+                        maxlength="10" required type="number" id="mobile" class="fadeIn second">
                 </div>
 
 
@@ -49,7 +49,7 @@
             <script>
                 $(function () {
 
-                    $('#fname2').keydown(function (e) {
+                    $('#pname2').keydown(function (e) {
 
                         if (e.shiftKey || e.ctrlKey || e.altKey) {
 
@@ -78,7 +78,7 @@
                     $('input[type="submit"]').attr('disabled', true);
                     $('input[type="text"],textarea').on('keyup', function () {
                         var textarea_value = $("#phnm").val();
-                        var text_value = $('input[name="fname"]').val();
+                        var text_value = $('input[name="pname"]').val();
                         if (textarea_value != '' && text_value != '') {
                             $('input[type="submit"]').attr('disabled', false);
                         } else {
@@ -446,7 +446,7 @@
              
                     <!-- <input type="button" id="contactFormSubmit1" value="next" style="font-size: 22px;" ng-click="contactForm1()">
           -->
-          <input type="button" id="id1" style="font-size: 22px;" ng-disabled="form.$invalid" value="Next">
+          <input type="button" id="id1" style="font-size: 22px;" value="Next">
 
             </form>
 
@@ -619,15 +619,16 @@ color: white;
 
 
                 </fieldset>
+                <input type="submit" ng-click="register()" value="Submit" style="font-size: 22px;" id="next2">
 
 
             </form>
-            <center>
+            <!-- <center>
                 <input type="submit" ng-click="register()" value="Submit" style="font-size: 22px;" id="next2">
 
 
             </center>
-      
+       -->
 
 
         </div>
@@ -1232,7 +1233,7 @@ color: white;
                     validating: 'glyphicon glyphicon-refresh'
                 },
                 fields: {
-                    fname: {
+                    pname: {
                         validators: {
                             stringLength: {
                                 min: 3,
@@ -1248,7 +1249,7 @@ color: white;
                         }
                     },
 
-                    fmobile: {
+                    pmobile: {
                         validators: {
                             notEmpty: {
                                 message: 'Please supply your phone number',
@@ -1259,7 +1260,7 @@ color: white;
 
                             }
                             ,
-                            fmobile: {
+                            pmobile: {
                                 country: 'IN',
                                 message: 'Please supply a vaild phone number with area code'
 
@@ -1288,7 +1289,7 @@ color: white;
                         console.log(result);
                     }, 'json');
                 })
-                .on('error.field.bv', '[name="fmobile"]', function (e, data) {
+                .on('error.field.bv', '[name="pmobile"]', function (e, data) {
                     // change the data-bv-trigger value to keydown
                     $(e.target).attr('data-bv-trigger', 'keydown');
                     // destroy the plugin
