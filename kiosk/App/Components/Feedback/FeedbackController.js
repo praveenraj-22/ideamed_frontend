@@ -18,8 +18,9 @@ app.controller('FeedbackController', ['FeedbackService', '$location', '$scope', 
     }
 
     $scope.register = function ()                                               /**$scope.register ->ng-click value */ {
-        
-        $("#next2").attr("disabled", true);
+        $('#next2').hide();
+        $('#spinner').show();
+    
         console.log("used data" + $scope.feedback);
 
         console.log('content reached to  RegisterController');
