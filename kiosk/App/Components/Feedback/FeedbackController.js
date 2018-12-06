@@ -19,7 +19,7 @@ app.controller('FeedbackController', ['FeedbackService', '$location', '$scope', 
 
     $scope.register = function ()                                               /**$scope.register ->ng-click value */ {
         $('#next2').hide();
-        $('#spinner').show();
+       
     
         console.log("used data" + $scope.feedback);
 
