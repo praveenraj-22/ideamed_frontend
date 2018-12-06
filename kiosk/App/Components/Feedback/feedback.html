@@ -15,7 +15,7 @@
 
                 <div class="form-group">
                     <input name="pmobile" placeholder="" id="phnm" ng-model="feedback.pmobile" pattern="^[6789]\d{9}$"
-                        maxlength="10" required type="tel" value="+91"  class="fadeIn second">
+                        maxlength="10" required type="tel"  class="fadeIn second">
                 </div>
 
              
@@ -59,7 +59,7 @@
 
                             var key = e.keyCode;
 
-                            if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+                            if (!( (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
 
                                 e.preventDefault();
 
@@ -112,24 +112,7 @@
                     display: none;
                 }
             </style>
-<!-- 
-            <script>
-                $(document).ready(function () {
-                    $('input[type="button"]').attr('disabled', true);
 
-                    $('input[type="text"],textarea').on('keyup', function () {
-                        var textarea_value = $("#texta").val();
-                        var text_value = $('input[name="text"]').val();
-
-                        if (textarea_value != '' && text_value != '') {
-                            $('input[type="button"]').attr('disabled', false);
-                        } else {
-                            $('input[type="button"]').attr('disabled', true);
-                        }
-                    });
-                });
-
-            </script> -->
             <form class="well form-horizontal" name="contactform1"  id="contact_form1">
 
                 <div class="well well-md text-center">
@@ -619,19 +602,178 @@ color: white;
 
 
                 </fieldset>
-                <input type="submit" ng-click="register()" value="Submit" style="font-size: 22px;" id="next2">
+                <!-- <input type="button" data-loading-text="Loading..." ng-click="register()" class="btn btn-danger ladda-button" data-style="expand-left"  value="Submit" style="font-size: 22px;" id="next2"  > -->
+                <!-- <button class="btn btn-danger ladda-button" data-style="expand-left"><span class="ladda-label">expand-left</span></button> -->
+                           
+             <center>
+                   
+                 <!-- <input type="button"  ng-click="register()"  value="Submit" style="font-size: 22px;" id="next2"  >
+                -->
+                
+                <button class="button" ng-click="register()"  value="Submit" style="font-size: 22px;" id="next2" >
+      
+                            <span class="submit">Submit</span>
+                            <span class="loading"><i class="fa fa-refresh"></i></span>
+                            <span class="check"><i class="fa fa-check"></i></span>
+                        </button>
+                    
+             </center>  
+  
 
+            
 
             </form>
-            <!-- <center>
-                <input type="submit" ng-click="register()" value="Submit" style="font-size: 22px;" id="next2">
 
+         
 
-            </center>
-       -->
+       <script>
+       const button = document.querySelector('.button');
+const submit = document.querySelector('.submit');
+
+function toggleClass() {
+    this.classList.toggle('active');
+  
+}
+
+function addClass() {
+	this.classList.add('finished');
+}
+
+button.addEventListener('click', toggleClass);
+button.addEventListener('transitionend', toggleClass);
+button.addEventListener('transitionend', addClass);
+       
+       </script>
+       <style>
+            /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+            *, *:before, *:after {
+        box-sizing: border-box;
+        outline: none;
+      }
+      
+     
+      
+      .hide {
+        display: none;
+      }
+      
+      .button {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1.5rem;
+        width: 22.5rem;
+        height: 5.5rem;
+           padding: 1.5rem 3.125rem;
+        background-color: #56baed;
+        border: none;
+        border-radius: 0.3125rem;
+        box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
+        color: white;
+        font-weight: 300;
+        text-transform: uppercase;
+        overflow: hidden;
+      }
+      .button:before {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: #54d98c;
+      }
+      .button span {
+        position: absolute;
+        line-height: 0;
+      }
+      .button span i {
+        transform-origin: center center;
+      }
+      .button span:nth-of-type(1) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .button span:nth-of-type(2) {
+        top: 100%;
+        transform: translateY(0%);
+        font-size: 24px;
+      }
+      .button span:nth-of-type(3) {
+        display: none;
+      }
+      
+      .active {
+        background-color: #2ecc71;
+      }
+      .active:before {
+        width: 100%;
+        transition: width 3s linear;
+      }
+      .active span:nth-of-type(1) {
+        top: -100%;
+        transform: translateY(-50%);
+      }
+      .active span:nth-of-type(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .active span:nth-of-type(2) i {
+        animation: loading 500ms linear infinite;
+      }
+      .active span:nth-of-type(3) {
+        display: none;
+      }
+      
+      .finished {
+        background-color: #54d98c;
+      }
+      .finished .submit {
+        display: none;
+      }
+      .finished .loading {
+        display: none;
+      }
+      .finished .check {
+        display: block !important;
+        font-size: 24px;
+        animation: scale 0.5s linear;
+      }
+      .finished .check i {
+        transform-origin: center center;
+      }
+      
+      @keyframes loading {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes scale {
+        0% {
+          transform: scale(10);
+        }
+        50% {
+          transform: scale(0.2);
+        }
+        70% {
+          transform: scale(1.2);
+        }
+        90% {
+          transform: scale(0.7);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      
+          </style>
+      
 
 
         </div>
+
 
 
 
@@ -1244,7 +1386,7 @@ color: white;
                                 message: 'Please supply your patient name'
                             },
                             regexp: {
-                                regexp: /^[a-zA-Z_]+$/,
+                                regexp: /^[a-zA-Z_ .]+$/,
                                 message: 'The name can only consist of alphabetical, number and underscore'
                             }
                         }

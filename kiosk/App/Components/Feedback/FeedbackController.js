@@ -16,30 +16,10 @@ app.controller('FeedbackController', ['FeedbackService', '$location', '$scope', 
             $('#id').hide();
         }
     }
-// $scope.contactForm1=function()
-// {
-//     if($scope.contactform1.$valid)
-//     {
-//         $("#contactFormSubmit1").click(function () {
-
-
-//             $('#contact_form').hide();
-//             $('#contact_form1').hide();
-//             $('#contactFormSubmit1').hide();
-//             $('#contact_form2').show();
-//             $('#next2').show();
-//             $('#next1').hide();
-//             $('#next').hide();
-
-
-//         });
-//     }else{
-//         alert("Please select all feedback option");
-//     }
-// }
-
 
     $scope.register = function ()                                               /**$scope.register ->ng-click value */ {
+        
+        $("#next2").attr("disabled", true);
         console.log("used data" + $scope.feedback);
 
         console.log('content reached to  RegisterController');
