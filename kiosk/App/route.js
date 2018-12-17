@@ -1,6 +1,6 @@
 
- app.constant('REST_URI','http://13.250.202.199:8080/ideamed/');
-// app.constant('REST_URI','http://localhost:8080/ideamed/');
+ //app.constant('REST_URI','http://13.250.202.199:8080/ideamed/');
+ app.constant('REST_URI','http://localhost:8080/ideamed/');
 app.config(function($routeProvider)
 {
 
@@ -40,20 +40,39 @@ app.config(function($routeProvider)
         
        })
 
+
+       .when('/login', {
+        templateUrl: 'App/Components/login/login.html',
+   
+           controller: 'logincontroller',
+        
+       })
+
+
+       .when('/patient', {
+        templateUrl: 'App/Components/DashBoard/Dashboard.html',
+   
+           controller: 'DashboardController',
+        
+       })
+
+       
+       .when('/selected', {
+        templateUrl: 'App/Components/DashBoard/selected.html',
+   
+           controller: 'DashboardController',
+        
+       })
+
+
        .when('/admin', {
-        templateUrl: 'App/Components/Admin/admin.html',
+        templateUrl: 'App/Components/DashBoard/selected.html',
    
-           controller: 'FeedbackController',
+           controller: 'DashboardController',
         
        })
-    
-       .when('/adminlogin', {
-        templateUrl: 'App/Components/Admin/adminlogin.html',
-   
-           controller: 'LoginController',
-        
-       })
-    
+
+
 
     .otherwise({
         templateUrl: 'App/Components/Home/home.html'
