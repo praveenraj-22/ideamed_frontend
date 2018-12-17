@@ -1,0 +1,215 @@
+<div class="container">
+        <div class="row">
+           
+            <div class="panel panel-primary">
+                <div class="panel-heading" >
+                    <h3>Patient Feedback Details
+                       
+                    </h3>
+                </div>
+              
+            
+          <table id="example" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="" style="width: 200px;">Date</th>
+                <th>Mrn No:</th>
+                        <th>Name</th>
+                        <th>Mobile</th>
+                        <th>Feedback</th>
+                        
+                    </tr>
+                </thead>
+  
+                <tbody>
+                 
+                  <tr ng-repeat="m in feedback | date:'dd/MM/yyyy'">
+                    
+                      <td>{{m.pdate}}</td>
+                   <td>{{m.pmrnno}}</td>
+                      <td>{{m.pname}}</td>
+                      <td>{{m.pmobile}}</td>
+                      <td>{{m.remark}}</td>
+
+            </tr>
+           
+            
+           
+               </tbody>
+  
+               
+            </table> 
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="panel panel-primary">
+            <div class="panel-heading" >
+             <center>
+                <h3>Feedback Reports </h3>
+             </center>
+                
+            </div>
+        
+        
+      <table id="example" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="" > </th>
+            
+                    <!-- <th>Excellent</th>
+                    <th>Good</th>
+                    <th>Poor</th> -->
+                    <th>
+                        Result
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+             
+              <tr ng-repeat="m in feedback">
+                
+                  <td>Reception / Registration</td>
+               
+                  <td>{{m.recreg}}</td>
+               
+
+        </tr>
+        <tr ng-repeat="m in feedback">
+                
+            <td>Doctor's Co-ordinator</td>
+         <td>{{m.doccoord}}</td>
+           
+
+  </tr>
+        
+  <tr ng-repeat="m in feedback">
+                
+    <td>Doctor's Service</td>
+    <td>{{m.docser}}</td>
+    
+
+</tr>
+<tr ng-repeat="m in feedback">
+                
+    <td>Counseling</td>
+    <td>{{m.counseling}}</td>
+    
+
+</tr>
+<tr ng-repeat="m in feedback">
+                
+    <td>Optometrist</td>
+    <td>{{m.opto}}</td>
+    
+
+</tr>
+
+<tr ng-repeat="m in feedback">
+                
+    <td>Laboratory</td>
+    <td>{{m.lab}}</td>
+   
+
+</tr>
+       
+<tr ng-repeat="m in feedback">
+                
+    <td>Optical</td>
+    <td>{{m.optical}}</td>
+   
+</tr>
+
+<tr ng-repeat="m in feedback">
+                
+    <td>Pharmacy</td>
+    <td>{{m.pharmacy}}</td>
+   
+</tr>
+
+<tr ng-repeat="m in feedback">
+                
+    <td>Operation Theatre</td>
+    <td>{{m.ot}}</td>
+  
+
+</tr>
+
+<tr ng-repeat="m in feedback">
+                
+    <td>Cleaning</td>
+    <td>{{m.cleaning}}</td>
+    
+
+</tr>
+     
+<tr ng-repeat="m in feedback">
+                
+    <td>Staff Difference</td>
+    <td>{{m.staffdiff}}</td>
+    
+</tr>
+
+<tr ng-repeat="m in feedback">
+                
+    <td>Recommended</td>
+    <td>{{m.recommend}}</td>
+    
+</tr>
+
+
+
+<tr ng-repeat="m in feedback">
+                
+    <td>Overall</td>
+    <td>{{m.overall}}</td>
+    
+</tr>
+
+</tbody>
+
+
+           
+        </table> 
+
+
+        </div>
+
+
+    </div>
+<center>
+    <input type="button" value="Back" onclick="windowClose();">
+    
+</center>
+    
+
+    <script language="javascript" type="text/javascript">
+        function windowClose() {
+        window.open('','_parent','');
+        window.close();
+        }
+        </script>
+
+<!-- 
+    <style>
+    
+    h3{
+    margin:5px;
+    padding: 5px;
+}
+
+.btn-custom{
+ border: none;   
+}
+
+#toolbar-admin{
+    display: none;
+}
+
+    
+    </style> -->

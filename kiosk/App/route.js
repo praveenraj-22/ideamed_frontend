@@ -1,6 +1,6 @@
 
- //app.constant('REST_URI','http://13.250.202.199:8080/ideamed/');
- app.constant('REST_URI','http://localhost:8080/ideamed/');
+ app.constant('REST_URI','http://13.250.202.199:8080/ideamed/');
+ //app.constant('REST_URI','http://localhost:8087/ideamed/');
 app.config(function($routeProvider)
 {
 
@@ -40,39 +40,70 @@ app.config(function($routeProvider)
         
        })
 
-
-       .when('/login', {
-        templateUrl: 'App/Components/login/login.html',
+       .when('/admin', {
+        templateUrl: 'App/Components/Admin/admin.html',
    
-           controller: 'logincontroller',
+           controller: 'FeedbackController',
+        
+       })
+    
+       .when('/adminlogin', {
+        templateUrl: 'App/Components/Admin/adminlogin.html',
+   
+           controller: 'LoginController',
+        
+       })
+    
+
+       .when('/patient', {
+        templateUrl: 'App/Components/Patient/patientfeedback.html',
+      //  controller: 'patientcontroller',
+        controller:'patientControler',
+   
+          
+        
+       })
+
+       .when('/result', {
+        templateUrl: 'App/Components/Patient/result.html',
+        controller: 'patientcontroller',
+       // controller:'patientControler',
+   
+          
+        
+       })
+
+       .when('/patient/:datead', {
+        templateUrl: 'App/Components/Patient/patientfeedback.html',
+      //  controller: 'patientcontroller',
+        controller:'patientControler',
+   
+          
         
        })
 
 
-       .when('/patient', {
-        templateUrl: 'App/Components/DashBoard/Dashboard.html',
+
+       .when('/allpatient', {
+        templateUrl: 'App/Components/Patient/allpatient.html',
+        controller: 'patientcontroller',
+       // controller:'patientControler',
    
-           controller: 'DashboardController',
+          
+        
+       })
+
+
+       .when('/getvalue/:id', {
+        templateUrl: 'App/Components/Patient/patientfeedbackdetail.html',
+        controller: 'patientControler',
+       // controller:'patientControler',
+   
+          
         
        })
 
        
-       .when('/selected', {
-        templateUrl: 'App/Components/DashBoard/selected.html',
-   
-           controller: 'DashboardController',
-        
-       })
-
-
-       .when('/admin', {
-        templateUrl: 'App/Components/DashBoard/selected.html',
-   
-           controller: 'DashboardController',
-        
-       })
-
-
 
     .otherwise({
         templateUrl: 'App/Components/Home/home.html'

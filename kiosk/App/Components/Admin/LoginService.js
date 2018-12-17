@@ -4,7 +4,7 @@ LoginModule.service('LoginService',['REST_URI','$http',function(REST_URI,$http)
 {
     this.login=function(loginAD){
         console.log('content reached to login service');
-        return $http.post(REST_URI+'/loginUser',loginAD)
+        return $http.post(REST_URI+'/adminlogin',loginAD)
     }
  
     this.logout=function(user){

@@ -1,0 +1,349 @@
+
+
+  <div class="container-fluid">
+    <header class="header">
+      <h1 class="logo"><a href="#"><img src="App/Resources/image/logo.svg" alt="" sizes="100px" srcset=""></a></h1>
+    
+    </header> 
+
+  </div> 
+
+
+
+  <div class="container">
+    <div class="jumbotron">
+    
+      <form class="well form-horizontal"  name="contact_form" method="POST" id="contact_form">
+  
+        <div class="row">
+          <div class="col-sm-3">
+              <center>
+                  <label >From date</label>
+              
+              </center>
+            <div class="form-group">
+            
+              <input type="date" ng-model="dateAD.fdatead" id="datepicker" required >   
+             </div>
+
+
+          </div>
+          <div class="col-sm-3">
+
+              <center>
+                  <label >To date</label>
+              
+              </center>
+            <div class="form-group">
+            
+              <input type="date" ng-model="dateAD.tdatead" id="datepicker" required >   
+             </div>
+             
+
+          </div>
+
+          
+          <div class="col-sm-3">
+              <center>
+                  <label >Mobile number</label>
+              
+              </center>
+            <div class="form-group">
+            
+                <input name="pmobile" placeholder="" id="phnm" ng-model="dateAD.mobile" pattern="^[6789]\d{9}$"
+                        maxlength="10"  type="tel" > 
+             </div> 
+          </div>
+          <div class="col-sm-3">
+
+            <label for=""></label>
+              <!-- <button class="button" type="submit" ng-click="datead()" value="Submit"  id="next2">
+                  <span class="submit">Search</span>  
+                  <span class="loading"><i class="fa fa-refresh"></i></span>
+                  <span class="check"><i class="fa fa-check"></i></span>
+              </button> -->
+
+              <button type="submit" ng-click="datead()" style="margin-top:10px ;width: 100%;height: 100%;padding:17px 12px;;" class="btn btn-primary">Search</button>
+              
+              
+          </div>
+        </div> 
+
+      </form>  
+    
+    </div>
+    </div>
+
+  
+
+
+     
+
+ 
+ <div class="container">
+  <div class="row">
+      <h3 class="text-center">Reports</h2>
+  </div>
+
+  <div class="row">
+
+      <div class="col-md-12">
+ 
+          <table id="example" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+              <thead>
+                  <tr>
+                      <th  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="" style="width: 200px;">Date</th>
+              
+                      <th>Name</th>
+                      <th>Mobile</th>
+                      <th>Feedback</th>
+                      <th>Detail</th>
+                   
+                  
+                  </tr>
+              </thead>
+
+              <tbody>
+               
+                <tr data-toggle="collapse"  data-target=".order" ng-repeat="m in feedback | filter:searchText" data-target="#demo1" class="accordion-toggle">
+                  
+                    <td>{{m.pdate | date : 'dd/MM/yyyy'}}</td>
+                
+                    <td>{{m.pname}}</td>
+                    <td>{{m.pmobile}}</td>
+                    <td>{{m.remark}}</td>
+
+                    <td>
+                       <a href="#!/getvalue/{{m.id}}" target="_blank">
+                        <button type="submit" class="btn btn-primary">Details</button>
+                      </a> </td>
+                    
+          </tr>
+         
+          
+         
+             </tbody>
+
+          </table> 
+
+      
+        
+      </div>
+  </div>
+</div>
+
+
+<style>
+.toggleDisplay {
+  display: none;
+}
+.toggleDisplay.in {
+  display: table-cell;
+}
+
+</style>
+
+<script>
+
+$("#click-me").click(function() {
+	$(".table .toggleDisplay").toggleClass("in");
+});
+
+</script>
+
+<style>
+tr.collapse.in {
+  display:table-row;
+}
+</style>
+  
+
+    
+    <script>
+            $( function() {
+              $( "#datepicker1" ).datepicker();
+            } );
+            </script>    
+
+
+<script>
+   $(document).ready(function () {
+        $('#example').DataTable();
+    });
+
+</script>
+
+
+<style>
+        /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+        *, *:before, *:after {
+    box-sizing: border-box;
+    outline: none;
+  }
+  
+  
+  
+  .hide {
+    display: none;
+  }
+  
+  .button {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 22.5rem;
+   height: 5.5rem;
+    padding: 1.5rem 3.125rem;
+    background-color: #3498db;
+    border: none;
+    border-radius: 0.3125rem;
+    box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
+    color: white;
+    font-weight: 300;
+    text-transform: uppercase;
+    overflow: hidden;
+  }
+  .button:before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #54d98c;
+  }
+  .button span {
+    position: absolute;
+    line-height: 0;
+  }
+  .button span i {
+    transform-origin: center center;
+  }
+  .button span:nth-of-type(1) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .button span:nth-of-type(2) {
+    top: 100%;
+    transform: translateY(0%);
+    font-size: 24px;
+  }
+  .button span:nth-of-type(3) {
+    display: none;
+  }
+  
+  .active {
+    background-color: #2ecc71;
+  }
+  .active:before {
+    width: 100%;
+    transition: width 3s linear;
+  }
+  .active span:nth-of-type(1) {
+    top: -100%;
+    transform: translateY(-50%);
+  }
+  .active span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .active span:nth-of-type(2) i {
+    animation: loading 500ms linear infinite;
+  }
+  .active span:nth-of-type(3) {
+    display: none;
+  }
+  
+  .finished {
+    background-color: #54d98c;
+  }
+  .finished .submit {
+    display: none;
+  }
+  .finished .loading {
+    display: none;
+  }
+  .finished .check {
+    display: block !important;
+    font-size: 24px;
+    animation: scale 0.5s linear;
+  }
+  .finished .check i {
+    transform-origin: center center;
+  }
+  
+  @keyframes loading {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes scale {
+    0% {
+      transform: scale(10);
+    }
+    50% {
+      transform: scale(0.2);
+    }
+    70% {
+      transform: scale(1.2);
+    }
+    90% {
+      transform: scale(0.7);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+      </style>
+
+<script>
+
+const button = document.querySelector('.button');
+const submit = document.querySelector('.submit');
+
+function toggleClass() {
+this.classList.toggle('active');
+}
+
+function addClass() {
+this.classList.add('finished');
+}
+
+button.addEventListener('click', toggleClass);
+button.addEventListener('transitionend', toggleClass);
+button.addEventListener('transitionend', addClass);
+</script>
+
+
+
+
+
+
+
+<style>
+    .btn.active {
+        display: none;
+    }
+
+    .btn span:nth-of-type(1) {
+        display: none;
+    }
+
+    .btn span:last-child {
+        display: block;
+    }
+
+    .btn.active span:nth-of-type(1) {
+        display: block;
+    }
+
+    .btn.active span:last-child {
+        display: none;
+    }
+</style>
+
+
+

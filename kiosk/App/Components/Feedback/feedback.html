@@ -1,4 +1,10 @@
-
+<div class="container-fluid">
+        <header class="header">
+          <h1 class="logo"><a href="#"><img src="App/Resources/image/logo.svg" alt="" sizes="100px" srcset=""></a></h1>
+        
+        </header> 
+    
+        
 <div class="container">
     <div class="wrapper fadeInDown">
 
@@ -26,8 +32,7 @@
 
                 <div class="form-group">
                     <input name="pname" id="pname2" placeholder="" required ng-model="feedback.pname" class="form-control" type="text">
-                    <input  type="text" id="datepicker" ng-model='feedback.pdate' placeholder="Choose Date">
-           
+
                 </div>
 
                 
@@ -45,19 +50,7 @@
                 <input type="button" id="contactFormSubmit" value="next" style="font-size: 22px;" ng-click="contactForm()" />
 
             </form>
-            <script>
 
-                $(function() {
-                        $( "#datepicker" ).datepicker({
-                             dateFormat : 'yy-mm-dd',
-                            changeMonth : true,
-                            changeYear : true,
-                            yearRange: '-100y:c+nn',
-                             maxDate: '+0d'
-                        });
-                    });
-                   
-                </script>
         
             <script>
                 $(function () {
@@ -125,24 +118,9 @@
                     display: none;
                 }
             </style>
-<!-- 
-            <script>
-                $(document).ready(function () {
-                    $('input[type="button"]').attr('disabled', true);
 
-                    $('input[type="text"],textarea').on('keyup', function () {
-                        var textarea_value = $("#texta").val();
-                        var text_value = $('input[name="text"]').val();
 
-                        if (textarea_value != '' && text_value != '') {
-                            $('input[type="button"]').attr('disabled', false);
-                        } else {
-                            $('input[type="button"]').attr('disabled', true);
-                        }
-                    });
-                });
 
-            </script> -->
             <form class="well form-horizontal" name="contactform1"  id="contact_form1">
 
                 <div class="well well-md text-center">
@@ -1499,6 +1477,3 @@ button.addEventListener('transitionend', addClass);
         })
     });
 </script>
-
-
-

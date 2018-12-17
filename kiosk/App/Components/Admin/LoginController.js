@@ -16,8 +16,8 @@ app.controller('LoginController', ['LoginService' ,'$scope', '$location', '$root
         }, function (response) {
             console.log(response.data)
             $scope.loginFail = response.data
-            //alert('please register first');
-            $location.path('/login')
+          // alert('please register first');
+            $location.path('/adminlogin')
         })
     }
 

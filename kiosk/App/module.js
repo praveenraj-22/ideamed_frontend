@@ -4,6 +4,7 @@ var app=angular.module("ideamed",
     'RegisterModule',
     'ngCookies',
     'FeedbackModule',
-     'DashboardModule',
-  'LoginModule',
+    'LoginModule',
+    'PatientModule'
+  
 ]);
