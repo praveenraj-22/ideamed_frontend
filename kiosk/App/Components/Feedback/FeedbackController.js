@@ -19,22 +19,22 @@ app.controller('FeedbackController', ['FeedbackService', '$location', '$scope', 
 
     $scope.register = function ()                                               /**$scope.register ->ng-click value */ {
         $('#next2').hide();
-        // console.log("used data" + $scope.feedback);
+        console.log("used data" + $scope.feedback);
 
-        // console.log('content reached to  RegisterController');
-        // console.log($scope.feedback.pmobile);
-        // console.log($scope.feedback.pdate);
+        console.log('content reached to  RegisterController');
+        console.log($scope.feedback.pmobile);
+        console.log($scope.feedback.pdate);
 
         FeedbackService.register($scope.feedback).then(function (response) {
-           // console.log(response)
+            console.log(response)
 
             $location.path('/thank')
         },
             function (response) {
-               // console.log(error)
+                console.log(error)
                 $scope.response = response.status.data
-                // console.log(response.status)
-                // console.log(response.data)
+                console.log(response.status)
+                console.log(response.data)
 
                 $scope.error = response.data
                 if ($scope.error.code == 303) {

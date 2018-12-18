@@ -24,9 +24,6 @@
             <div class="form-group">
             
               <input type="date" ng-model="dateAD.fdatead" id="datepicker" required >   
-
-
-              
              </div>
 
 
@@ -58,8 +55,13 @@
              </div> 
           </div>
           <div class="col-sm-3">
-<label for=""> </label>
-            
+
+            <label for=""></label>
+              <!-- <button class="button" type="submit" ng-click="datead()" value="Submit"  id="next2">
+                  <span class="submit">Search</span>  
+                  <span class="loading"><i class="fa fa-refresh"></i></span>
+                  <span class="check"><i class="fa fa-check"></i></span>
+              </button> -->
 
               <button type="submit" ng-click="datead()" style="margin-top:10px ;width: 100%;height: 100%;padding:17px 12px;;" class="btn btn-primary">Search</button>
               
@@ -103,9 +105,9 @@
 
               <tbody>
                
-                <tr data-toggle="collapse"  data-target=".order" ng-repeat="m in feedback" data-target="#demo1" class="accordion-toggle">
+                <tr data-toggle="collapse"  data-target=".order" ng-repeat="m in feedback | filter:searchText" data-target="#demo1" class="accordion-toggle">
                   
-                    <td>{{m.pdate || 'dd/MM/yyyy'}}</td>
+                    <td>{{m.pdate | date : 'dd/MM/yyyy'}}</td>
                 
                     <td>{{m.pname}}</td>
                     <td>{{m.pmobile}}</td>
@@ -124,7 +126,7 @@
 
           </table> 
 
-         
+      
         
       </div>
   </div>
