@@ -10,10 +10,10 @@ app.controller('patientControler', ['patientservice', '$location', '$scope', '$r
 
 
 
-        // console.log('content reached to patient Controller');
-        // console.log("From date : " + $scope.dateAD.fdatead);
-        // console.log("To Date : " + $scope.dateAD.tdatead);
-        // console.log("Mobile number :"+$scope.dateAD.mobile);
+        console.log('content reached to patient Controller');
+        console.log("From date : " + $scope.dateAD.fdatead);
+        console.log("To Date : " + $scope.dateAD.tdatead);
+        console.log("Mobile number :"+$scope.dateAD.mobile);
 
 
         if ($scope.dateAD.tdatead == null) {
@@ -26,7 +26,7 @@ app.controller('patientControler', ['patientservice', '$location', '$scope', '$r
         }
 else if($scope.dateAD.mobile==null)
 {
-   //  alert($scope.dateAD.mobile);
+    alert($scope.dateAD.mobile);
     $scope.feedback.pmobile=0;
     patientservice.datead($scope.dateAD.fdatead, $scope.dateAD.tdatead, $scope.dateAD.mobile, $scope.dateAD).then(function (response) {
         console.log(response)
@@ -43,8 +43,8 @@ else if($scope.dateAD.mobile=="")
 {
     $scope.dateAD.mobile=0;
     $scope.feedback.pmobile=0;
-    // alert($scope.dateAD.mobile);
-    // alert($scope.feedback.pmobile);
+     alert($scope.dateAD.mobile);
+     alert($scope.feedback.pmobile);
     patientservice.datead($scope.dateAD.fdatead, $scope.dateAD.tdatead, $scope.dateAD.mobile, $scope.dateAD).then(function (response) {
         console.log(response)
   
