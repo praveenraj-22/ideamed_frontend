@@ -29,7 +29,7 @@ else if($scope.dateAD.mobile==null)
    //  alert($scope.dateAD.mobile);
     $scope.feedback.pmobile=0;
     patientservice.datead($scope.dateAD.fdatead, $scope.dateAD.tdatead, $scope.dateAD.mobile, $scope.dateAD).then(function (response) {
-       // console.log(response)
+        console.log(response)
 
         $scope.feedback = response.data;
 
@@ -46,8 +46,8 @@ else if($scope.dateAD.mobile=="")
     // alert($scope.dateAD.mobile);
     // alert($scope.feedback.pmobile);
     patientservice.datead($scope.dateAD.fdatead, $scope.dateAD.tdatead, $scope.dateAD.mobile, $scope.dateAD).then(function (response) {
-       // console.log(response)
-    //    $scope.date = new Date();
+        console.log(response)
+  
         $scope.feedback = response.data;
 
 
@@ -58,8 +58,8 @@ else if($scope.dateAD.mobile=="")
 
         else {
             patientservice.datead($scope.dateAD.fdatead, $scope.dateAD.tdatead, $scope.dateAD.mobile, $scope.dateAD).then(function (response) {
-              //  console.log(response)
-            //  $scope.date = new Date();
+                console.log(response)
+            
                 $scope.feedback = response.data;
 
 
@@ -72,7 +72,7 @@ else if($scope.dateAD.mobile=="")
   
 
     $scope.feedback=patientservice.getValue(id,$scope.feedback).then(function(response){
-      //  console.log("Patient ID is :" + id);
+        console.log("Patient ID is :" + id);
         $scope.feedback=[
             response.data
         ];
@@ -290,11 +290,11 @@ else if(response.data.overall==0)
 
 
 
-    //   console.log(response.data.recreg);
-    //     console.log(response.data.pname);
-    //     console.log(response.data)
+      console.log(response.data.recreg);
+        console.log(response.data.pname);
+        console.log(response.data)
         
-    //     console.log(response.status)
+        console.log(response.status)
 
     })
 

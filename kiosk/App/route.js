@@ -1,6 +1,6 @@
 
- app.constant('REST_URI','http://13.250.202.199:8080/ideamed/');
- //app.constant('REST_URI','http://localhost:8087/ideamed/');
+ //app.constant('REST_URI','http://13.250.202.199:8080/ideamed/');
+ app.constant('REST_URI','http://localhost:8087/ideamed/');
 app.config(function($routeProvider)
 {
 
