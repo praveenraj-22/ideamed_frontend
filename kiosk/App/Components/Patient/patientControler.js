@@ -2,6 +2,7 @@ app.controller('patientControler', ['patientservice', '$location', '$scope', '$r
 
     $scope.feedback = {};
     $scope.feedback1 = {};
+    $scope.date = {};
     var id=$routeParams.id;
 
     $scope.datead = function ()                                               /**$scope.register ->ng-click value */ 
@@ -9,26 +10,71 @@ app.controller('patientControler', ['patientservice', '$location', '$scope', '$r
 
 
 
-        console.log('content reached to patient Controller');
-        console.log("From date : " + $scope.dateAD.fdatead);
-        console.log("To Date : " + $scope.dateAD.tdatead);
-        console.log($scope.dateAD.mobile);
+        // console.log('content reached to patient Controller');
+        // console.log("From date : " + $scope.dateAD.fdatead);
+        // console.log("To Date : " + $scope.dateAD.tdatead);
+        // console.log("Mobile number :"+$scope.dateAD.mobile);
+var Fob=$scope.dateAD.fdatead;
+var Tob=$scope.dateAD.tdatead;
+        var ds ="'"+Fob+"'";
+        var ds1="'"+Tob+"'";
+
+        var Fdate = moment(new Date(ds.substr(0, 16)));
+        var Tdate = moment(new Date(ds1.substr(0, 16)));
+        
+        console.log("From date :"+Fdate.format("YYYY-MM-DD"));
+
+        console.log("To date :"+Tdate.format("YYYY-MM-DD"));
+
+        $scope.dateAD.fdatead=Fdate.format("YYYY-MM-DD");
+
+        $scope.dateAD.tdatead=Tdate.format("YYYY-MM-DD");
 
 
         if ($scope.dateAD.tdatead == null) {
 
-            alert("please select To Date")
+           alert("please select To Date")
             $location.path('/patient')
         } else if ($scope.dateAD.fdatead == null) {
             alert("please select From Date")
             $location.path('/patient')
         }
+else if($scope.dateAD.mobile==null)
+{
+   // alert($scope.dateAD.mobile);
+    $scope.feedback.pmobile=0;
+    patientservice.datead($scope.dateAD.fdatead, $scope.dateAD.tdatead, $scope.dateAD.mobile, $scope.dateAD).then(function (response) {
+        console.log(response)
 
+        $scope.feedback = response.data;
+
+
+        $location.path('/patient')
+    }
+    )
+}
+
+else if($scope.dateAD.mobile=="")
+{
+    $scope.dateAD.mobile=0;
+    $scope.feedback.pmobile=0;
+    //  alert($scope.dateAD.mobile);
+    //  alert($scope.feedback.pmobile);
+    patientservice.datead($scope.dateAD.fdatead, $scope.dateAD.tdatead, $scope.dateAD.mobile, $scope.dateAD).then(function (response) {
+        console.log(response)
+  
+        $scope.feedback = response.data;
+
+
+        $location.path('/patient')
+    }
+    )
+}
 
         else {
             patientservice.datead($scope.dateAD.fdatead, $scope.dateAD.tdatead, $scope.dateAD.mobile, $scope.dateAD).then(function (response) {
                 console.log(response)
-
+            
                 $scope.feedback = response.data;
 
 
