@@ -1,0 +1,144 @@
+package com.project.controller;
+
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+ 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.project.FeedbackDAO.FeedbackDAO;
+import com.project.login.LoginAD;
+import com.project.model.Error;
+import com.project.model.Feedback;
+
+@RestController
+public class FeedbackController 
+{
+@Autowired
+private FeedbackDAO feedbackDAO;
+
+@Autowired
+Feedback feedback;
+
+
+@RequestMapping("/registerFeedback")
+
+public ResponseEntity<?> registerFeedback(@RequestBody Feedback feedback)
+
+
+{
+	System.out.println("content reached to feedbackcontroller");
+	try {
+		System.out.println("content of the " +feedback.getPmobile()+"is going to save");
+		System.out.println("content of the " +feedback.getPname()+"is going to save");
+	System.out.println("Date : " +feedback.getPdate());
+	feedbackDAO.saveFeedback(feedback);
+	System.out.println("feedback is saved");
+	
+	
+    //Setting up configurations for the email connection to the Google SMTP server using TLS
+ /*   Properties props = new Properties();
+    props.put("mail.smtp.host", "true");
+    props.put("mail.smtp.starttls.enable", "true");
+    props.put("mail.smtp.host", "smtp.gmail.com");
+    props.put("mail.smtp.port", "587");
+    props.put("mail.smtp.auth", "true");
+    //Establishing a session with required user details
+    Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+        protected PasswordAuthentication getPasswordAuthentication() {
+            return new PasswordAuthentication("feedback@dragarwalsopticals.com", "onetwothree");
+        }
+    });
+    try {
+        //Creating a Message object to set the email content
+        MimeMessage msg = new MimeMessage(session);
+        //Storing the comma seperated values to email addresses
+        String to = "bhooma@dragarwal.com,kishore@dragarwal.com";
+        Parsing the String with defualt delimiter as a comma by marking the boolean as true and storing the email
+        addresses in an array of InternetAddress objects
+        InternetAddress[] address = InternetAddress.parse(to, true);
+        //Setting the recepients from the address variable
+        msg.setRecipients(Message.RecipientType.TO, address);
+        String timeStamp = new SimpleDateFormat("yyyy-MM-dd_hh-mm-ss").format(new Date());
+        msg.setSubject("Feedback Mail : " + timeStamp);
+        msg.setSentDate(new Date());
+        msg.setText("MRN_No : " + feedback.getPmrnno() + "\n" 
+        		+ "Patient_name : " +feedback.getPname() +"\n"
+        		+"Mobile No : "+feedback.getPmobile()+"\n"
+        				+ "\n"
+        				+ "\n"
+      +"Note : 1-Excellent , 2-Good, 3-Poor" + "\n" + "\n"
+        				
+        		 +" counseling : "+feedback.getCounseling()
+        		 + "\n"
+        		+" Doctor Coordinator : "+ feedback.getDoccoord()+ "\n"
+        		 + " Reception/Registarion : "+ feedback.getRecreg()
+        		+ "\n"	
+        		 +" Doctor Service : "+feedback.getDocser()
+        		+ "\n"	+
+        		" Optometrist :"+feedback.getOpto() + "\n"
+        		+" Laboratry : "+ feedback.getLab()+ "\n" 
+        		+ " Optical : " +feedback.getOptical() 
+        		+ "\n" 
+        		+" Pharmacy : "+feedback.getPharmacy() + "\n"
+        		+" Cleaning & Hygiene : "+ feedback.getCleaning()  +"\n"
+        				+ "\n"
+        		
+        		+"Overall feedback : " + feedback.getOverall()
+        		
+        		+"\n"
+        		+ "\n"
+        		+ "Will you recommend : " +feedback.getRecommend()
+        		+"\n"
+        		+ "Remark : "+feedback.getRemark()
+        		
+        		);
+   
+        
+        msg.setHeader("XPriority", "1");
+        Transport.send(msg);
+        System.out.println("Mail has been sent successfully");
+    } catch (MessagingException mex) {
+        System.out.println("Unable to send an email" + mex);
+    }
+*/
+
+		return new ResponseEntity<Feedback>(feedback,HttpStatus.OK);
+	} catch (Exception e) {
+		Error error=new Error(1,"Unable to register.." + e.getMessage());
+	System.out.println("error "+e.getMessage());
+	return new ResponseEntity<Error>(error,HttpStatus.INTERNAL_SERVER_ERROR);		}
+
+
+}
+
+
+
+
+
+
+@RequestMapping("/health")
+public String health()
+{
+	return "string alive";
+	
+}
+
+
+}
+
+

@@ -8,12 +8,6 @@ app.controller('patientControler', ['patientservice', '$location', '$scope', '$r
     $scope.datead = function ()                                               /**$scope.register ->ng-click value */ 
     {
 
-
-
-        // console.log('content reached to patient Controller');
-        // console.log("From date : " + $scope.dateAD.fdatead);
-        // console.log("To Date : " + $scope.dateAD.tdatead);
-        // console.log("Mobile number :"+$scope.dateAD.mobile);
 var Fob=$scope.dateAD.fdatead;
 var Tob=$scope.dateAD.tdatead;
         var ds ="'"+Fob+"'";
@@ -313,7 +307,12 @@ else if(response.data.overall==0)
 
     })
 
-
+    $scope.logout = function(){
+        //Just clear values from scope
+        $scope.username = '';
+        $scope.password = '';
+        $location.path('/adminlogin');
+    }
 
 
 
