@@ -26,7 +26,7 @@ app.controller('FeedbackController', ['FeedbackService', '$location', '$scope', 
         // console.log($scope.feedback.pdate);
 
         FeedbackService.register($scope.feedback).then(function (response) {
-           // console.log(response)
+            console.log(response)
 
             $location.path('/thank')
         },
