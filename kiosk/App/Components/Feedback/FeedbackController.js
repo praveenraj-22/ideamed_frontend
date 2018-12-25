@@ -23,7 +23,7 @@ app.controller('FeedbackController', ['FeedbackService', '$location', '$scope', 
 
         // console.log('content reached to  RegisterController');
         // console.log($scope.feedback.pmobile);
-        // console.log($scope.feedback.pdate);
+         console.log($scope.feedback.hospfloor);
 
         FeedbackService.register($scope.feedback).then(function (response) {
             console.log(response)

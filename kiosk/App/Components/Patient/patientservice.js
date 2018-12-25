@@ -16,11 +16,11 @@ PatientModule.service('patientservice',['REST_URI','$http',function(REST_URI,$ht
     }
     
     
-    this.datead1=function(Tdatead,dateAD){
-        console.log("content reached to get by id");
-        return $http.get(REST_URI+"/patient/"+Tdatead,dateAD)
+    // this.datead1=function(Tdatead,dateAD){
+    //     console.log("content reached to get by id");
+    //     return $http.get(REST_URI+"/patient/"+Tdatead,dateAD)
     
-    }
+    // }
 
 
     this.getValue=function(id,feedback){

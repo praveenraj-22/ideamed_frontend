@@ -38,6 +38,7 @@ else if($scope.dateAD.mobile==null)
    // alert($scope.dateAD.mobile);
     $scope.feedback.pmobile=0;
     patientservice.datead($scope.dateAD.fdatead, $scope.dateAD.tdatead, $scope.dateAD.mobile, $scope.dateAD).then(function (response) {
+      
         console.log(response)
 
         $scope.feedback = response.data;
@@ -66,6 +67,7 @@ else if($scope.dateAD.mobile=="")
 }
 
         else {
+            console.log("hit")
             patientservice.datead($scope.dateAD.fdatead, $scope.dateAD.tdatead, $scope.dateAD.mobile, $scope.dateAD).then(function (response) {
                 console.log(response)
             
