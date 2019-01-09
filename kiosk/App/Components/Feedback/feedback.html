@@ -20,7 +20,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input name="pmobile" placeholder="" id="phnm" ng-model="feedback.pmobile" pattern="^[6789]\d{9}$"
+                        <input name="pmobile" placeholder="" id="phnm" ng-model="feedback.pmobile" pattern="^[123456789]\d{9}$"
                             maxlength="10" required type="tel" value="+91" class="fadeIn second">
                     </div>
 
@@ -66,7 +66,7 @@
 
                                 var key = e.keyCode;
 
-                                if (!((key == 32)||(key==8) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+                                if (!((key == 32) ||(key==8) || (key == 46) || (key==190) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
 
                                     e.preventDefault();
 
@@ -219,15 +219,19 @@ select::-ms-expand {
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                       </select> -->
-                                      <select name="hospfloor"  ng-model="feedback.hospfloor"  style="width: 70%;" class="form-control selectpicker" >
-                                        <option value=" ">Ground Floor</option>
+                                      <select name="hospfloor"  style="background-color:cornsilk;width: 70% ;color: red;font-weight: bolder;text-justify: inter-cluster " ng-model="feedback.hospfloor"  class="form-control selectpicker">
+                                        <option value="" selected style="color: blue">Select the floor</option>
+                                        <option>Ground Floor</option>
                                         <option>1st Floor</option>
                                         <option>2nd Floor</option>
                                         <option>3nd Floor</option>
+                                        <option>4th Floor</option>
+                                    
+                                   
                                         
-                                      </select>
+                                         </select>
                           
-
+                                      
 <!-- 
                                       <select name="state"  class="form-control selectpicker" style="width: 70%;">
                                         <option value=" " >Please select the floor you visit</option>
