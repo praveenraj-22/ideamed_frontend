@@ -50,7 +50,7 @@
           </div>
 
           
-          <div class="col-sm-3">
+          <!-- <div class="col-sm-3">
               <center>
                   <label >Mobile number</label>
               
@@ -60,7 +60,7 @@
                 <input name="pmobile" placeholder="" id="phnm" ng-model="dateAD.mobile" pattern="^[6789]\d{9}$"
                         maxlength="10"  type="tel" > 
              </div> 
-          </div>
+          </div> -->
           <div class="col-sm-3">
 <label for=""> </label>
             
@@ -69,6 +69,14 @@
               
               
           </div>
+          <div class="col-sm-3">
+            <label for=""> </label>
+                        
+            
+                          <!-- <button type="clear" ng-click="clear()" style="margin-top:10px ;width: 100%;height: 100%;padding:17px 12px;;" class="btn btn-primary">clear</button> -->
+                          <input type="reset" value="Reset" />
+                          
+                      </div>
         </div> 
 
       </form>  
@@ -99,7 +107,9 @@
                       <th>Name</th>
                       <th>Mobile</th>
                       <th>Feedback</th>
+                      <th>Floor</th>
                       <th>Detail</th>
+                    
                    
                   
                   </tr>
@@ -110,15 +120,15 @@
                 <tr data-toggle="collapse"  data-target=".order" ng-repeat="m in feedback" data-target="#demo1" class="accordion-toggle">
                   
                     <td>{{m.pdate || 'dd/MM/yyyy'}}</td>
-                
                     <td>{{m.pname}}</td>
                     <td>{{m.pmobile}}</td>
                     <td>{{m.remark}}</td>
-
+                    <td>{{m.hospfloor}}</td>
                     <td>
                        <a href="#!/getvalue/{{m.id}}" target="_blank">
                         <button type="submit" class="btn btn-primary">Details</button>
                       </a> </td>
+                  
                     
           </tr>
          
